@@ -1,4 +1,4 @@
-# NEXUS Financial Intelligence Engine
+NEXUS – AI-Powered MSME Financial Intelligence Platform
 
 NEXUS is an enterprise-grade financial health intelligence platform designed for MSMEs.
 
@@ -39,10 +39,7 @@ The AI integration is modularized inside \`src/services/ai/\`:
 NEXUS is optimized for Vercel. 
 1. Push your code to GitHub.
 2. Import the repository in your Vercel dashboard.
-3. In the Vercel project settings, add the `GEMINI_API_KEY` environment variable.
+3. In the Vercel project settings, add the \`GEMINI_API_KEY\` environment variable.
 4. Deploy.
 
-If you wish to deploy the application publicly *without* enabling the live AI for visitors, you can set the environment variable `NEXT_PUBLIC_DISABLE_AI=true`. This will gracefully fall back to a mock message across all AI panels.
-
-## Author
-Developed by [AYJJAE](https://github.com/AYJJAE)
+If you wish to deploy the application publicly *without* enabling the live AI for visitors, you can set the environment variable \`NEXT_PUBLIC_DISABLE_AI=true\`. This will gracefully fall back to a mock message across all AI panels.
