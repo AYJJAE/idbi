@@ -1,45 +1,44 @@
-# NEXUS Financial Intelligence Engine
+NEXUS – AI-Powered MSME Financial Intelligence Platform
 
-NEXUS is an enterprise-grade financial health intelligence platform designed for MSMEs.
+NEXUS is a next-generation financial intelligence platform designed to modernize the way financial institutions evaluate Micro, Small and Medium Enterprises (MSMEs). Instead of relying solely on traditional financial statements, NEXUS aggregates alternative financial data such as GST, UPI, Account Aggregator (AA), EPFO and banking information to generate a comprehensive, explainable Financial Health Card.
 
-## Setup and Installation
+The platform combines intelligent financial analytics, multidimensional scoring, interactive visualizations and explainable insights to help assess business health, credit readiness and financial stability in a transparent and data-driven manner.
 
-1. Clone the repository
-2. Install dependencies: \`npm install\`
-3. Run the development server: \`npm run dev\`
-4. Open [http://localhost:3000](http://localhost:3000)
+*Key Highlights*
 
-## AI Configuration
+- 📊 Multidimensional Financial Health Card
+- 🏦 Digital Financial Passport
+- 📈 Revenue, Cash Flow & Compliance Analytics
+- 💳 Credit Readiness Assessment
+- 📉 Risk Analysis & Explainability Engine
+- 📋 Industry Benchmarking
+- 📑 Financial Reports & Export System
+- 📂 Document & Financial Data Management
+- 🎯 Business Scenario Simulator
+- 🤖 Modular AI Architecture (Optional)
+- 🌙 Beautiful Light & Dark Mode
+- ⚡ Enterprise-grade Dashboard Experience
 
-The application features advanced AI integration powered by Google Gemini. For security and open-source compliance, the live AI integration is disabled by default until you configure it.
+*Technology Stack*
 
-### Enabling AI Insights
-To reconnect the AI functionality:
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Framer Motion
+- Recharts
+- Zustand
+- TanStack Query
+- Prisma
+- PostgreSQL
+- Supabase
+- Google Gemini API (Optional)
 
-1. Obtain a **Gemini API Key** from [Google AI Studio](https://aistudio.google.com/).
-2. Create a \`.env.local\` file in the root directory (you can copy the provided \`.env.example\` file):
-   \`\`\`bash
-   cp .env.example .env.local
-   \`\`\`
-3. Add your key to the environment variables:
-   \`\`\`env
-   GEMINI_API_KEY=your_actual_api_key_here
-   \`\`\`
-4. Restart the development server.
+*Project Structure*
 
-### AI Architecture
-The AI integration is modularized inside \`src/services/ai/\`:
-- **\`config.ts\`**: Configuration flags (e.g., \`NEXT_PUBLIC_DISABLE_AI\`) and model selection.
-- **\`client.ts\`**: The Gemini client initialization.
-- **\`providers.ts\`**: Reusable placeholder prompt templates. You can customize these prompts to tailor the AI responses to your specific data models.
+The project follows a modular enterprise architecture with reusable components, scalable feature modules and clean separation between business logic, UI and services.
 
-## Deployment
+Designed with extensibility in mind, NEXUS can be adapted for different financial institutions, lending workflows and credit assessment models.
 
-### Vercel Deployment
-NEXUS is optimized for Vercel. 
-1. Push your code to GitHub.
-2. Import the repository in your Vercel dashboard.
-3. In the Vercel project settings, add the \`GEMINI_API_KEY\` environment variable.
-4. Deploy.
-
-If you wish to deploy the application publicly *without* enabling the live AI for visitors, you can set the environment variable \`NEXT_PUBLIC_DISABLE_AI=true\`. This will gracefully fall back to a mock message across all AI panels.
+> *Note:* This repository is an open-source demonstration of the platform. Any AI-powered features require your own Google Gemini API key and are disabled by default in the public version.
