@@ -1,7 +1,7 @@
 'use client';
 
 // =============================================================================
-// NEXUS Score Ring — Animated circular score indicator with gradient stroke
+// NEXUS Score Ring — Premium animated circular score with gradient & glow
 // =============================================================================
 
 import { useEffect, useState, useId } from 'react';
@@ -43,6 +43,7 @@ export function NexusScoreRing({
   const scoreColor = getScoreHexColor(score);
   const grade = getScoreGrade(score);
   const gradientId = useId();
+  const glowId = useId();
 
   // Animate the score number counting up
   useEffect(() => {
@@ -81,9 +82,17 @@ export function NexusScoreRing({
       >
         <defs>
           <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor={scoreColor} stopOpacity="0.6" />
-            <stop offset="100%" stopColor={scoreColor} stopOpacity="1" />
+            <stop offset="0%" stopColor={scoreColor} stopOpacity="0.5" />
+            <stop offset="50%" stopColor={scoreColor} stopOpacity="1" />
+            <stop offset="100%" stopColor={scoreColor} stopOpacity="0.7" />
           </linearGradient>
+          <filter id={glowId}>
+            <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
         </defs>
         {/* Background track */}
         <circle
@@ -93,9 +102,9 @@ export function NexusScoreRing({
           fill="none"
           stroke="currentColor"
           strokeWidth={config.strokeWidth}
-          className="text-muted/30"
+          className="text-muted/20"
         />
-        {/* Score arc */}
+        {/* Score arc with glow */}
         <motion.circle
           cx={config.diameter / 2}
           cy={config.diameter / 2}
@@ -105,6 +114,7 @@ export function NexusScoreRing({
           strokeWidth={config.strokeWidth}
           strokeLinecap="round"
           strokeDasharray={circumference}
+          filter={`url(#${glowId})`}
           initial={{ strokeDashoffset: circumference }}
           animate={{ strokeDashoffset }}
           transition={{

@@ -1,15 +1,26 @@
 import * as React from "react"
-import { Input as InputPrimitive } from "@base-ui/react/input"
 
 import { cn } from "@/lib/utils"
 
+import { tokens } from "@/design/tokens"
+
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
-    <InputPrimitive
+    <input
       type={type}
       data-slot="input"
       className={cn(
-        "h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
+        "file:text-foreground placeholder:text-muted-foreground/50 selection:bg-primary/15 selection:text-primary-foreground",
+        "flex w-full min-w-0 bg-background/60 backdrop-blur-sm px-3 py-1 text-sm",
+        "border border-border/40 shadow-sm",
+        "transition-all duration-200 outline-none",
+        "file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium",
+        "disabled:pointer-events-none disabled:opacity-50 md:text-sm",
+        "focus-visible:border-primary/50 focus-visible:ring-3 focus-visible:ring-primary/10",
+        "aria-invalid:border-destructive aria-invalid:ring-destructive/20",
+        "dark:border-border/30 dark:bg-card/40 dark:focus-visible:border-primary/40 dark:focus-visible:ring-primary/15",
+        tokens.radius.classes.input,
+        "h-10", // Updated to 40px height as per standard inputs
         className
       )}
       {...props}

@@ -13,6 +13,7 @@ import { RevenueTrendChart } from './revenue-trend-chart';
 import { CashflowChart } from './cashflow-chart';
 import { HealthRadarChart } from './health-radar-chart';
 import { RecentActivity } from './recent-activity';
+import { ConnectedEcosystemsCard } from '@/features/ecosystems/components/connected-ecosystems-card';
 import { useDashboardData } from '@/hooks/use-dashboard-data';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 import { Button } from '@/components/ui/button';
@@ -82,6 +83,11 @@ export function DashboardView() {
         <div className="lg:col-span-1">
           <RecentActivity events={data.activityEvents} />
         </div>
+      </motion.div>
+
+      {/* Row 4: Connected Ecosystems */}
+      <motion.div variants={staggerItem}>
+        <ConnectedEcosystemsCard />
       </motion.div>
     </motion.div>
   );

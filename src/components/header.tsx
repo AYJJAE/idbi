@@ -1,11 +1,13 @@
 'use client';
 
 // =============================================================================
-// NEXUS Header — Top bar with breadcrumbs, search, and business switcher
+// NEXUS Header — Floating glass top navigation
 // =============================================================================
 
 import * as React from 'react';
 import { Search, Building2, ChevronDown } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { tokens } from '@/design/tokens';
 import { Badge } from '@/components/ui/badge';
 import {
   DropdownMenu,
@@ -38,21 +40,29 @@ export function Header() {
 
   return (
     <header
-      className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-border/40 bg-background/70 px-6 backdrop-blur-xl"
+      className={cn(
+        "sticky top-0 z-30 flex h-[60px] items-center justify-between px-6 border-b border-border/30",
+        tokens.glass.classes.header
+      )}
     >
       {/* Left: Breadcrumbs & Search */}
       <div className="flex items-center gap-4">
         {breadcrumbs.length > 0 && (
-          <nav className="hidden items-center gap-1 text-[13px] text-muted-foreground lg:flex mr-4">
-            <Link href="/" className="hover:text-foreground transition-colors font-medium">
+          <nav className="hidden items-center gap-1.5 text-[13px] text-muted-foreground lg:flex mr-4">
+            <Link href="/" className="hover:text-foreground transition-colors duration-200 font-medium text-muted-foreground/60">
               NEXUS
             </Link>
             {breadcrumbs.map((crumb, idx) => (
               <React.Fragment key={crumb.href}>
-                <span className="text-border/80 mx-0.5">›</span>
+                <span className="text-border mx-0.5">/</span>
                 <Link
                   href={crumb.href}
-                  className={idx === breadcrumbs.length - 1 ? 'text-foreground font-medium' : 'hover:text-foreground transition-colors'}
+                  className={cn(
+                    'transition-colors duration-200',
+                    idx === breadcrumbs.length - 1
+                      ? 'text-foreground font-medium'
+                      : 'hover:text-foreground text-muted-foreground/60'
+                  )}
                 >
                   {crumb.label}
                 </Link>
@@ -63,24 +73,24 @@ export function Header() {
 
         <button
           onClick={() => setCommandPaletteOpen(true)}
-          className="flex items-center gap-2 rounded-lg border border-input bg-muted/40 px-3 py-1.5 text-sm text-muted-foreground transition-all hover:bg-muted hover:text-foreground"
+          className="flex items-center gap-2 rounded-xl border border-border/40 bg-muted/30 px-3.5 py-1.5 text-sm text-muted-foreground transition-all duration-200 hover:bg-muted/60 hover:text-foreground hover:border-border/60 backdrop-blur-sm"
         >
           <Search className="h-3.5 w-3.5" />
-          <span className="hidden sm:inline">Search or jump to...</span>
-          <kbd className="ml-6 hidden rounded border border-border bg-background px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground sm:inline-block">
+          <span className="hidden sm:inline text-[13px]">Search or jump to...</span>
+          <kbd className="ml-6 hidden rounded-md border border-border/50 bg-background/80 px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground/60 sm:inline-block">
             ⌘K
           </kbd>
         </button>
       </div>
 
       {/* Right: Actions */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2.5">
         {/* Demo Mode Badge */}
         <Badge
           variant="outline"
-          className="h-6 border-emerald-500/20 bg-emerald-500/8 text-emerald-600 dark:text-emerald-400 font-medium px-2.5 text-[11px] gap-1.5"
+          className="h-6 border-[#00836C]/20 bg-[#00836C]/6 text-[#00836C] dark:text-[#00D4A8] dark:border-[#00D4A8]/20 dark:bg-[#00D4A8]/8 font-medium px-2.5 text-[11px] gap-1.5"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="h-1.5 w-1.5 rounded-full bg-[#00836C] dark:bg-[#00D4A8] animate-pulse" />
           Demo
         </Badge>
 
@@ -88,7 +98,7 @@ export function Header() {
 
         {/* Dynamic MSME Profile Switcher */}
         <DropdownMenu>
-          <DropdownMenuTrigger className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-medium hover:bg-muted transition-colors">
+          <DropdownMenuTrigger className="flex items-center gap-2 rounded-xl border border-border/40 bg-card/60 backdrop-blur-sm px-3 py-1.5 text-xs font-medium hover:bg-card/80 hover:border-border/60 transition-all duration-200">
             <Building2 className="h-3.5 w-3.5 text-muted-foreground" />
             <span className="truncate max-w-[120px] md:max-w-[180px]">
               {currentBusiness.name}

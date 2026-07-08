@@ -18,46 +18,29 @@ export const APP_VERSION = '1.0.0';
 
 export const NAVIGATION: NavGroup[] = [
   {
-    label: 'Overview',
+    label: 'Dashboard',
     items: [
-      { id: 'dashboard', label: 'Dashboard', href: '/', icon: 'LayoutDashboard' },
-    ],
-  },
-
-  {
-    label: 'Business',
-    items: [
-      { id: 'business-profile', label: 'Business Profile', href: '/business/profile', icon: 'Building' },
-      { id: 'business-onboarding', label: 'Business Onboarding', href: '/business/onboarding', icon: 'ClipboardList', badge: 'Active' },
+      { id: 'dashboard', label: 'Overview', href: '/dashboard', icon: 'LayoutDashboard' },
+      { id: 'health-card', label: 'Financial Health Card', href: '/intelligence/health-card', icon: 'HeartPulse' },
       { id: 'financial-passport', label: 'Financial Passport', href: '/business/passport', icon: 'Fingerprint' },
+      { id: 'eco-gst', label: 'GST Network', href: '/ecosystems/gst', icon: 'FileSpreadsheet' },
+      { id: 'eco-upi', label: 'UPI Network', href: '/ecosystems/upi', icon: 'Smartphone' },
+      { id: 'eco-aa', label: 'Account Aggregator (AA)', href: '/ecosystems/account-aggregator', icon: 'Network' },
+      { id: 'eco-epfo', label: 'EPFO', href: '/ecosystems/epfo', icon: 'ShieldAlert' },
+      { id: 'eco-uli', label: 'Unified Lending Interface (ULI)', href: '/ecosystems/uli', icon: 'Landmark' },
+      { id: 'eco-ocen', label: 'Open Credit Enablement Network (OCEN)', href: '/ecosystems/ocen', icon: 'Banknote' },
     ],
   },
   {
     label: 'Financial Intelligence',
+    isDivider: true,
     items: [
-      { id: 'health-card', label: 'Financial Health Card', href: '/intelligence/health-card', icon: 'HeartPulse' },
       { id: 'revenue-analysis', label: 'Revenue Analysis', href: '/intelligence/revenue', icon: 'TrendingUp' },
       { id: 'cashflow-analysis', label: 'Cash Flow Analysis', href: '/intelligence/cash-flow', icon: 'Droplets' },
       { id: 'compliance-monitor', label: 'Compliance Monitor', href: '/intelligence/compliance', icon: 'FileText' },
       { id: 'payment-behaviour', label: 'Payment Behaviour', href: '/intelligence/payments', icon: 'CreditCard' },
       { id: 'workforce-analysis', label: 'Workforce Analysis', href: '/intelligence/workforce', icon: 'Users' },
       { id: 'digital-banking-score', label: 'Digital Banking Score', href: '/intelligence/banking-score', icon: 'Landmark' },
-    ],
-  },
-  {
-    label: 'Data Sources',
-    items: [
-      { id: 'gst-data', label: 'GST', href: '/data-sources/gst', icon: 'FileSpreadsheet' },
-      { id: 'upi-data', label: 'UPI', href: '/data-sources/upi', icon: 'Smartphone' },
-      { id: 'account-aggregator', label: 'Account Aggregator', href: '/data-sources/aggregator', icon: 'Network' },
-      { id: 'epfo-data', label: 'EPFO', href: '/data-sources/epfo', icon: 'ShieldAlert' },
-      { id: 'bank-statements', label: 'Bank Statements', href: '/data-sources/bank-statements', icon: 'Library' },
-      { id: 'documents', label: 'Documents', href: '/data-sources/documents', icon: 'FolderOpen', badge: 14 },
-    ],
-  },
-  {
-    label: 'Credit Assessment',
-    items: [
       { id: 'loan-eligibility', label: 'Loan Eligibility', href: '/credit/eligibility', icon: 'BadgeCheck' },
       { id: 'credit-readiness', label: 'Credit Readiness', href: '/credit/readiness', icon: 'Gauge' },
       { id: 'scenario-simulator', label: 'Scenario Simulator', href: '/credit/simulator', icon: 'Binary' },
@@ -65,12 +48,32 @@ export const NAVIGATION: NavGroup[] = [
     ],
   },
   {
-    label: 'Insights',
+    label: 'Reports',
     items: [
+      { id: 'reports', label: 'Reports', href: '/insights/reports', icon: 'BarChart3' },
       { id: 'business-timeline', label: 'Business Timeline', href: '/insights/timeline', icon: 'CalendarRange' },
       { id: 'risk-radar', label: 'Risk Radar', href: '/insights/risk-radar', icon: 'Activity' },
       { id: 'industry-benchmark', label: 'Industry Benchmark', href: '/insights/benchmarks', icon: 'Award' },
-      { id: 'reports', label: 'Reports', href: '/insights/reports', icon: 'BarChart3' },
+    ],
+  },
+  {
+    label: 'Future Integrations',
+    items: [
+      { id: 'eco-mca', label: 'MCA', href: '/ecosystems/mca', icon: 'Building' },
+      { id: 'eco-ckyc', label: 'CKYC', href: '/ecosystems/ckyc', icon: 'UserCheck' },
+      { id: 'bank-statements', label: 'Bank Statements', href: '/data-sources/bank-statements', icon: 'Library' },
+      { id: 'documents', label: 'Documents', href: '/data-sources/documents', icon: 'FolderOpen', badge: 14 },
+      { id: 'business-profile', label: 'Business Profile', href: '/business/profile', icon: 'Building' },
+      { id: 'business-onboarding', label: 'Business Onboarding', href: '/business/onboarding', icon: 'ClipboardList', badge: 'Active' },
+    ],
+  },
+  {
+    items: [
+      { id: 'eco-api', label: 'API Playground', href: '/ecosystems/api-playground', icon: 'Braces' },
+      { id: 'eco-consent', label: 'Consent Manager', href: '/ecosystems/consent-manager', icon: 'Lock' },
+      { id: 'eco-sync', label: 'Sync History', href: '/ecosystems/sync-history', icon: 'History' },
+      { id: 'eco-health', label: 'Integration Health', href: '/ecosystems/health', icon: 'Activity' },
+      { id: 'settings', label: 'Settings', href: '/admin/settings', icon: 'Settings' },
     ],
   },
   {
@@ -80,7 +83,6 @@ export const NAVIGATION: NavGroup[] = [
       { id: 'roles', label: 'Roles', href: '/admin/roles', icon: 'ShieldCheck' },
       { id: 'audit-logs', label: 'Audit Logs', href: '/admin/audit-logs', icon: 'History' },
       { id: 'api-integrations', label: 'API Integrations', href: '/admin/integrations', icon: 'Cable' },
-      { id: 'settings', label: 'Settings', href: '/admin/settings', icon: 'Settings' },
     ],
   },
 ];
@@ -116,22 +118,22 @@ export const DIMENSION_THRESHOLDS = {
 // ---------------------------------------------------------------------------
 
 export const CHART_COLORS = {
-  primary: '#6366f1',     // indigo-500
-  secondary: '#8b5cf6',   // violet-500
-  success: '#10b981',     // emerald-500
-  warning: '#f59e0b',     // amber-500
-  danger: '#ef4444',      // red-500
-  info: '#3b82f6',        // blue-500
-  cyan: '#06b6d4',        // cyan-500
-  muted: '#94a3b8',       // slate-400
+  primary: '#00836C',     // Primary Green
+  secondary: '#00D4A8',   // Light Green variant
+  success: '#00836C',     // Primary Green
+  warning: '#F58220',     // Primary Orange
+  danger: '#F58220',      // Primary Orange (reusing as warning/danger per strict palette)
+  info: '#333333',        // Neutral
+  cyan: '#00836C',        // Primary Green
+  muted: '#888888',       // Neutral muted
 } as const;
 
 export const DIMENSION_COLORS: Record<string, string> = {
-  liquidity: '#3b82f6',
-  profitability: '#10b981',
-  solvency: '#8b5cf6',
-  efficiency: '#f59e0b',
-  growth: '#06b6d4',
+  liquidity: '#00836C',
+  profitability: '#00D4A8',
+  solvency: '#F58220',
+  efficiency: '#333333',
+  growth: '#00836C',
 };
 
 // ---------------------------------------------------------------------------

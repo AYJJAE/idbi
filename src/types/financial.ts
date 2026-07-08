@@ -212,7 +212,8 @@ export interface NavItem {
 }
 
 export interface NavGroup {
-  label: string;
+  label?: string;
+  isDivider?: boolean;
   items: NavItem[];
 }
 

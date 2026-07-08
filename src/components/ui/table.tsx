@@ -1,14 +1,15 @@
 "use client"
 
 import * as React from "react"
-
+import { motion, HTMLMotionProps } from "framer-motion"
 import { cn } from "@/lib/utils"
+import { tokens } from "@/design/tokens"
 
 function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
     <div
       data-slot="table-container"
-      className="relative w-full overflow-x-auto"
+      className={cn("relative w-full overflow-x-auto border-transparent bg-clip-padding", tokens.radius.classes.card, tokens.glass.classes.card, tokens.shadows.classes.sm)}
     >
       <table
         data-slot="table"
@@ -23,7 +24,10 @@ function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
   return (
     <thead
       data-slot="table-header"
-      className={cn("[&_tr]:border-b sticky top-0 z-10 bg-background/95 backdrop-blur-sm", className)}
+      className={cn(
+        "[&_tr]:border-b [&_tr]:border-border/20 sticky top-0 z-10", tokens.glass.classes.subtle,
+        className
+      )}
       {...props}
     />
   )
@@ -44,7 +48,7 @@ function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
     <tfoot
       data-slot="table-footer"
       className={cn(
-        "border-t bg-muted/50 font-medium [&>tr]:last:border-b-0",
+        "border-t border-border/20 bg-muted/30 font-medium [&>tr]:last:border-b-0",
         className
       )}
       {...props}
@@ -52,12 +56,14 @@ function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
   )
 }
 
-function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
+function TableRow({ className, ...props }: HTMLMotionProps<"tr">) {
   return (
-    <tr
+    <motion.tr
       data-slot="table-row"
+      whileHover={{ backgroundColor: "rgba(0,131,108,0.04)" }}
+      transition={{ duration: 0.2 }}
       className={cn(
-        "border-b transition-colors hover:bg-muted/40 has-aria-expanded:bg-muted/40 data-[state=selected]:bg-primary/5",
+        "border-b border-border/10 transition-colors data-[state=selected]:bg-primary/5",
         className
       )}
       {...props}
@@ -70,7 +76,7 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
     <th
       data-slot="table-head"
       className={cn(
-        "h-11 px-3 text-left align-middle font-semibold whitespace-nowrap text-muted-foreground [&:has([role=checkbox])]:pr-0",
+        "h-12 px-4 text-left align-middle font-semibold whitespace-nowrap", tokens.typography.classes.tableHeader, "[&:has([role=checkbox])]:pr-0",
         className
       )}
       {...props}

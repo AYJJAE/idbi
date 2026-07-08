@@ -1,7 +1,7 @@
 'use client';
 
 // =============================================================================
-// NEXUS Metric Card — KPI display with sparkline and trend
+// NEXUS Metric Card — Premium KPI display with sparkline and trend
 // =============================================================================
 
 import { motion } from 'framer-motion';
@@ -55,7 +55,7 @@ function Sparkline({ data, color, className }: { data: number[]; color: string; 
     <svg width={width} height={height} className={cn('overflow-visible', className)}>
       <defs>
         <linearGradient id={`sparkline-grad-${color.replace(/[^a-z0-9]/gi, '')}`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor={color} stopOpacity="0.15" />
+          <stop offset="0%" stopColor={color} stopOpacity="0.2" />
           <stop offset="100%" stopColor={color} stopOpacity="0" />
         </linearGradient>
       </defs>
@@ -70,7 +70,7 @@ function Sparkline({ data, color, className }: { data: number[]; color: string; 
         strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
-        opacity={0.7}
+        opacity={0.8}
       />
     </svg>
   );
@@ -84,7 +84,7 @@ function TrendIndicator({ trend, value }: { trend: 'up' | 'down' | 'stable'; val
   const Icon = trend === 'up' ? TrendingUp : trend === 'down' ? TrendingDown : Minus;
   const color =
     trend === 'up'
-      ? 'text-emerald-600 dark:text-emerald-400 bg-emerald-500/8'
+      ? 'text-[#00836C] dark:text-[#00D4A8] bg-[#00836C]/8 dark:bg-[#00D4A8]/10'
       : trend === 'down'
         ? 'text-rose-600 dark:text-rose-400 bg-rose-500/8'
         : 'text-muted-foreground bg-muted';
@@ -130,7 +130,8 @@ export function MetricCard({
     <motion.div variants={staggerItem}>
       <Card
         className={cn(
-          'group relative overflow-hidden p-5 transition-all duration-200 hover:shadow-md',
+          'group relative overflow-hidden p-5 transition-all duration-300',
+          'hover:translate-y-[-2px] hover:shadow-lg',
           className
         )}
       >
@@ -138,8 +139,8 @@ export function MetricCard({
           <div className="flex-1 space-y-2">
             <div className="flex items-center gap-2">
               <div
-                className="flex h-8 w-8 items-center justify-center rounded-lg"
-                style={{ backgroundColor: `${color}10` }}
+                className="flex h-8 w-8 items-center justify-center rounded-xl"
+                style={{ backgroundColor: `${color}12` }}
               >
                 <Icon className="h-4 w-4" style={{ color }} />
               </div>
@@ -161,7 +162,7 @@ export function MetricCard({
           </div>
 
           {sparklineData && (
-            <div className="mt-2 opacity-50 transition-opacity group-hover:opacity-100">
+            <div className="mt-2 opacity-40 transition-opacity duration-300 group-hover:opacity-100">
               <Sparkline data={sparklineData} color={color} />
             </div>
           )}
@@ -181,7 +182,7 @@ export function MetricCardSkeleton() {
       <div className="flex items-start justify-between">
         <div className="flex-1 space-y-3">
           <div className="flex items-center gap-2">
-            <Skeleton className="h-8 w-8 rounded-lg" />
+            <Skeleton className="h-8 w-8 rounded-xl" />
             <Skeleton className="h-3 w-24" />
           </div>
           <Skeleton className="h-7 w-20" />

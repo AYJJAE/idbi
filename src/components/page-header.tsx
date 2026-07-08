@@ -1,7 +1,7 @@
 'use client';
 
 // =============================================================================
-// NEXUS Page Header — Consistent page title with breadcrumbs and actions
+// NEXUS Page Header — Premium typography with refined hierarchy
 // =============================================================================
 
 import { ReactNode } from 'react';
@@ -29,18 +29,18 @@ export function PageHeader({
       variants={fadeInUp}
       initial="hidden"
       animate="visible"
-      className={cn('flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between pb-1', className)}
+      className={cn('flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between pb-2', className)}
     >
-      <div className="space-y-0.5">
+      <div className="space-y-1">
         {breadcrumbs && breadcrumbs.length > 0 && (
-          <nav className="flex items-center gap-1 text-[13px] text-muted-foreground mb-1">
+          <nav className="flex items-center gap-1.5 text-[13px] text-muted-foreground mb-1">
             {breadcrumbs.map((crumb, index) => (
-              <span key={crumb.label} className="flex items-center gap-1">
-                {index > 0 && <span className="text-border">›</span>}
+              <span key={crumb.label} className="flex items-center gap-1.5">
+                {index > 0 && <span className="text-border/60">/</span>}
                 {crumb.href ? (
                   <a
                     href={crumb.href}
-                    className="transition-colors hover:text-foreground"
+                    className="transition-colors duration-200 hover:text-foreground"
                   >
                     {crumb.label}
                   </a>
@@ -51,11 +51,11 @@ export function PageHeader({
             ))}
           </nav>
         )}
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+        <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           {title}
         </h1>
         {description && (
-          <p className="text-[13px] text-muted-foreground">{description}</p>
+          <p className="text-[13px] text-muted-foreground leading-relaxed max-w-2xl">{description}</p>
         )}
       </div>
       {actions && (

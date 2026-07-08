@@ -36,6 +36,7 @@ export const metadata: Metadata = {
 
 import { QueryProvider } from '@/lib/query-provider';
 import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeInjector } from '@/design/theme';
 
 // ---------------------------------------------------------------------------
 // Root Layout
@@ -48,13 +49,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
-      <body className="min-h-screen antialiased">
+      <body className="min-h-screen antialiased relative overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
         >
+          <ThemeInjector />
           <QueryProvider>
             <TooltipProvider>
               {children}
