@@ -28,7 +28,7 @@ export default function EPFODataSourcePage() {
         }
       />
 
-      <div className="grid gap-6 md:grid-cols-4">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-4">
         <Card className="md:col-span-1">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">Establishment Code</CardTitle>
@@ -82,7 +82,7 @@ export default function EPFODataSourcePage() {
         </Card>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -111,7 +111,7 @@ export default function EPFODataSourcePage() {
                 </div>
               ))}
               {data.recentChallans.length === 0 && (
-                 <div className="p-6 text-center text-muted-foreground text-sm border rounded-lg border-dashed">
+                 <div className="p-4 md:p-6 text-center text-muted-foreground text-sm border rounded-lg border-dashed">
                  No recent challans found.
                </div>
               )}
@@ -127,7 +127,7 @@ export default function EPFODataSourcePage() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-3 border rounded-lg">
                 <p className="text-[10px] uppercase text-muted-foreground font-semibold">Registered Entity</p>
                 <p className="text-sm font-bold mt-1 truncate">{currentBusiness.name}</p>

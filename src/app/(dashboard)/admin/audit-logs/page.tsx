@@ -20,14 +20,14 @@ export default function AuditLogsPage() {
         </CardHeader>
         <CardContent>
           <div className="rounded-md border">
-            <div className="grid grid-cols-4 bg-muted/50 p-3 text-xs font-semibold text-muted-foreground">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 bg-muted/50 p-3 text-xs font-semibold text-muted-foreground">
               <div className="col-span-2">Action</div>
               <div>User</div>
               <div className="text-right">Timestamp</div>
             </div>
             <div className="divide-y">
               {adminData.auditLogs.map((log) => (
-                <div key={log.id} className="grid grid-cols-4 items-center p-3 text-sm hover:bg-muted/30">
+                <div key={log.id} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center p-3 text-sm hover:bg-muted/30">
                   <div className="col-span-2 flex items-center gap-2">
                     <FileText className="h-4 w-4 text-muted-foreground shrink-0" />
                     <span className="font-medium">{log.action}</span>

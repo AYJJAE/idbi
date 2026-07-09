@@ -55,7 +55,7 @@ const QUICK_ACTIONS = [
 
 export function QuickActions() {
   return (
-    <Card className="p-6">
+    <Card className="p-4 md:p-6">
       <h3 className="mb-4 text-sm font-semibold text-foreground">Quick Actions</h3>
 
       <motion.div

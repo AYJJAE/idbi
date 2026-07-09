@@ -15,7 +15,7 @@ export default function APIIntegrationsPage() {
         description="Monitor connectivity with external data providers and registries."
       />
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-2">
         {adminData.apiIntegrations.map((api, idx) => (
           <Card key={idx}>
             <CardHeader className="pb-2">
@@ -31,7 +31,7 @@ export default function APIIntegrationsPage() {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 gap-4 mt-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
                 <div className="p-3 border rounded-lg bg-muted/30">
                   <p className="text-[10px] uppercase text-muted-foreground">Uptime (30d)</p>
                   <p className="text-lg font-bold">{api.uptime}</p>

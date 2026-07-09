@@ -26,7 +26,7 @@ export default function AccountAggregatorPage() {
         }
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-3">
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">Consent Artefact ID</CardTitle>
@@ -67,7 +67,7 @@ export default function AccountAggregatorPage() {
         </Card>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -94,7 +94,7 @@ export default function AccountAggregatorPage() {
                   </Badge>
                 </div>
               )) : (
-                <div className="p-6 text-center text-muted-foreground text-sm border rounded-lg border-dashed">
+                <div className="p-4 md:p-6 text-center text-muted-foreground text-sm border rounded-lg border-dashed">
                   No accounts linked via Account Aggregator.
                 </div>
               )}

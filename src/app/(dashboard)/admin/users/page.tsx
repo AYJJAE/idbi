@@ -28,14 +28,14 @@ export default function UsersPage() {
         </CardHeader>
         <CardContent>
           <div className="rounded-md border">
-            <div className="grid grid-cols-4 bg-muted/50 p-3 text-xs font-semibold text-muted-foreground">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 bg-muted/50 p-3 text-xs font-semibold text-muted-foreground">
               <div className="col-span-2">Name</div>
               <div>Role</div>
               <div className="text-right">Last Login</div>
             </div>
             <div className="divide-y">
               {adminData.users.map((u) => (
-                <div key={u.id} className="grid grid-cols-4 items-center p-3 text-sm">
+                <div key={u.id} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center p-3 text-sm">
                   <div className="col-span-2 flex items-center gap-3">
                     <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
                       {u.name.charAt(0)}

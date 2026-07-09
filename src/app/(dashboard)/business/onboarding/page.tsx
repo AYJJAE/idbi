@@ -33,7 +33,7 @@ export default function OnboardingPage() {
         }
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-3">
         {/* PROGRESS OVERVIEW */}
         <div className="md:col-span-1 space-y-6">
           <Card>

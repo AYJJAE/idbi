@@ -38,7 +38,7 @@ export default function DigitalBankingScorePage() {
         }
       />
 
-      <div className="grid gap-6 md:grid-cols-4">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-4">
         <Card className="md:col-span-1 bg-primary/5 border-primary/20">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-primary">Digital Maturity</CardTitle>
@@ -80,7 +80,7 @@ export default function DigitalBankingScorePage() {
         </Card>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Digital Channels Usage</CardTitle>

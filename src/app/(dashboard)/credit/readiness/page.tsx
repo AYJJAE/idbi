@@ -27,7 +27,7 @@ export default function CreditReadinessPage() {
         }
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-3">
         <Card className="md:col-span-1">
           <CardHeader>
             <CardTitle>NEXUS Readiness Score</CardTitle>

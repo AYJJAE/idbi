@@ -67,7 +67,7 @@ interface CashflowChartProps {
 export function CashflowChart({ data }: CashflowChartProps) {
   return (
     <motion.div variants={chartReveal} initial="hidden" animate="visible">
-      <Card className="p-6">
+      <Card className="p-4 md:p-6">
         <div className="mb-4 flex items-center justify-between">
           <div>
             <h3 className="text-sm font-semibold text-foreground">Cash Flow</h3>

@@ -37,7 +37,7 @@ export default function BusinessProfilePage() {
 
       {/* Hero Overview */}
       <Card className="border-t-4 border-t-primary overflow-hidden">
-        <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-4 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6">
           <div className="flex items-center gap-4">
             <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-sm">
               <Building2 className="h-8 w-8" />
@@ -60,7 +60,7 @@ export default function BusinessProfilePage() {
             </div>
           </div>
           
-          <div className="grid grid-cols-2 gap-4 md:flex md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:flex md:gap-8">
             <div className="space-y-1">
               <p className="text-xs font-medium text-muted-foreground">MSME Class</p>
               <p className="text-sm font-semibold">{currentBusiness.msmeCategory}</p>
@@ -78,7 +78,7 @@ export default function BusinessProfilePage() {
       </Card>
 
       <Tabs defaultValue="overview" className="w-full">
-        <TabsList className="grid w-full max-w-md grid-cols-3">
+        <TabsList className="grid w-full max-w-md grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="ownership">Ownership</TabsTrigger>
           <TabsTrigger value="locations">Locations</TabsTrigger>
@@ -86,7 +86,7 @@ export default function BusinessProfilePage() {
         
         {/* OVERVIEW TAB */}
         <TabsContent value="overview" className="mt-6 space-y-6 animate-in fade-in slide-in-from-bottom-2">
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-4 md:gap-6 md:grid-cols-2">
             <Card>
               <CardHeader className="pb-3">
                 <CardTitle className="text-base flex items-center gap-2">
@@ -95,7 +95,7 @@ export default function BusinessProfilePage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-1">
                     <p className="text-[10px] uppercase tracking-wider text-muted-foreground">CIN</p>
                     <p className="text-sm font-mono font-medium">{extendedData.cin}</p>

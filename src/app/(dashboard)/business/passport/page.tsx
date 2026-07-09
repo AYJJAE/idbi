@@ -198,7 +198,7 @@ export default function FinancialPassportPage() {
   }
 
   return (
-    <div className={`space-y-6 text-foreground transition-all ${presentationMode ? 'bg-[#0b0f19] p-8 rounded-xl shadow-2xl ring-4 ring-primary/20' : ''}`}>
+    <div className={`space-y-6 text-foreground transition-all ${presentationMode ? 'bg-[#0b0f19] p-4 md:p-6 lg:p-8 rounded-xl shadow-2xl ring-4 ring-primary/20' : ''}`}>
       
       {/* PRESENTATION OVERLAY CONTROLLER */}
       {presentationMode && (
@@ -290,7 +290,7 @@ export default function FinancialPassportPage() {
       {/* BLOOMBERG TERMINAL HERO SCORE BANNER */}
       <div 
         ref={sectionRefs.header} 
-        className="grid grid-cols-1 md:grid-cols-5 gap-6 bg-slate-950/80 border border-slate-800 rounded-xl p-6 shadow-xl relative overflow-hidden"
+        className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 bg-slate-950/80 border border-slate-800 rounded-xl p-4 md:p-6 shadow-xl relative overflow-hidden"
       >
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -307,7 +307,7 @@ export default function FinancialPassportPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
             <div className="bg-slate-900/60 p-3 rounded-lg border border-slate-800/80">
               <span className="text-[9px] uppercase tracking-wider text-slate-400 font-bold">Credit Readiness</span>
               <p className="text-lg font-black text-white mt-0.5">{passport.header.creditReadiness}%</p>
@@ -320,7 +320,7 @@ export default function FinancialPassportPage() {
         </div>
 
         {/* Market standing & limits */}
-        <div className="md:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-6">
+        <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6">
           <div className="space-y-1">
             <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">RISK CLASSIFICATION</span>
             <p className="text-lg font-bold text-white">{passport.header.riskClassification}</p>
@@ -351,7 +351,7 @@ export default function FinancialPassportPage() {
       </div>
 
       {/* CORE IDENTITY & EXECUTIVE SUMMARY */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
         
         {/* BUSINESS IDENTITY CARD */}
         <div ref={sectionRefs.identity} className="lg:col-span-1">
@@ -368,7 +368,7 @@ export default function FinancialPassportPage() {
               </div>
             </CardHeader>
             <CardContent className="pt-6 space-y-4">
-              <div className="grid grid-cols-2 gap-4 text-xs">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                 <div>
                   <span className="text-muted-foreground uppercase font-bold text-[9px] tracking-wider block">GSTIN</span>
                   <span className="font-mono font-bold text-foreground block mt-0.5">{currentBusiness.gstin}</span>
@@ -474,7 +474,7 @@ export default function FinancialPassportPage() {
       </div>
 
       {/* FINANCIAL DNA & EXPLAINABILITY ENGINE */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
         
         {/* FINANCIAL DNA */}
         <div ref={sectionRefs.dna} className="lg:col-span-1">
@@ -660,7 +660,7 @@ export default function FinancialPassportPage() {
                               </div>
                             </div>
 
-                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-border/40 pt-4 text-center">
+                            <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-4 gap-4 border-t border-border/40 pt-4 text-center">
                               <div>
                                 <span className="text-[9px] font-bold text-muted-foreground uppercase block">WEIGHT</span>
                                 <span className="text-sm font-bold text-foreground block mt-0.5">{exp.weight}% Contribution</span>
@@ -904,7 +904,7 @@ export default function FinancialPassportPage() {
       </div>
 
       {/* RISK RADAR & BENCHMARK COMPARISONS */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
         
         {/* RISK RADAR LIST */}
         <div ref={sectionRefs.risks} className="lg:col-span-1">
@@ -970,7 +970,7 @@ export default function FinancialPassportPage() {
                 </ResponsiveContainer>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center text-xs">
+              <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-4 gap-4 text-center text-xs">
                 <div className="bg-muted/30 p-2.5 rounded-lg border">
                   <span className="text-muted-foreground block text-[9px] font-bold">REGIONAL AVG MARGIN</span>
                   <span className="text-sm font-bold text-foreground block mt-0.5">{passport.benchmarks[0].regionalAvg}%</span>
@@ -994,7 +994,7 @@ export default function FinancialPassportPage() {
       </div>
 
       {/* HEALTH EVOLUTION & BUSINESS TIMELINE */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
         
         {/* HEALTH EVOLUTION CHART */}
         <div ref={sectionRefs.evolution} className="lg:col-span-1">
@@ -1117,7 +1117,7 @@ export default function FinancialPassportPage() {
       </div>
 
       {/* DOCUMENT INTELLIGENCE & DOWNLOAD CENTER */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
         
         {/* DOCUMENT INTELLIGENCE LIST */}
         <div ref={sectionRefs.documents} className="lg:col-span-2">

@@ -84,7 +84,7 @@ function TrendIndicator({ trend, value }: { trend: 'up' | 'down' | 'stable'; val
   const Icon = trend === 'up' ? TrendingUp : trend === 'down' ? TrendingDown : Minus;
   const color =
     trend === 'up'
-      ? 'text-[#00836C] dark:text-[#00D4A8] bg-[#00836C]/8 dark:bg-[#00D4A8]/10'
+      ? 'text-[#008C5A] dark:text-[#2DBE7F] bg-[#008C5A]/8 dark:bg-[#2DBE7F]/10'
       : trend === 'down'
         ? 'text-rose-600 dark:text-rose-400 bg-rose-500/8'
         : 'text-muted-foreground bg-muted';

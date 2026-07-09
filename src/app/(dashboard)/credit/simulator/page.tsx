@@ -39,7 +39,7 @@ export default function ScenarioSimulatorPage() {
         description="Interactive tool to model EMIs, interest payouts, and debt-service capacity."
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-3">
         <Card className="md:col-span-1">
           <CardHeader>
             <CardTitle>Loan Parameters</CardTitle>
@@ -106,7 +106,7 @@ export default function ScenarioSimulatorPage() {
           <CardHeader>
             <CardTitle>Repayment Breakdown</CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-col md:flex-row items-center gap-8">
+          <CardContent className="flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8">
             <div className="h-48 w-48 shrink-0">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
@@ -133,7 +133,7 @@ export default function ScenarioSimulatorPage() {
                 <p className="text-xs text-muted-foreground uppercase">Estimated Monthly EMI</p>
                 <p className="text-3xl font-bold text-primary mt-1">{formatCurrency(Math.round(emi))}</p>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-3 border rounded-lg">
                   <p className="text-[10px] text-muted-foreground uppercase">Principal</p>
                   <p className="text-lg font-bold">{formatCurrency(Math.round(amount))}</p>

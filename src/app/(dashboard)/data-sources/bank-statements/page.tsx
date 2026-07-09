@@ -55,7 +55,7 @@ export default function BankStatementsPage() {
         }
       />
 
-      <div className="grid gap-6 md:grid-cols-4">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-4">
         <Card className="md:col-span-1">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">Accounts Parsed</CardTitle>
@@ -87,7 +87,7 @@ export default function BankStatementsPage() {
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">Transaction Categorization</CardTitle>
           </CardHeader>
-          <CardContent className="flex items-center gap-6">
+          <CardContent className="flex items-center gap-4 md:gap-6">
             <div>
               <p className="text-[10px] text-muted-foreground uppercase">B2B Payments</p>
               <p className="text-xl font-bold text-emerald-500">68%</p>
@@ -106,7 +106,7 @@ export default function BankStatementsPage() {
         </Card>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-3">
         <Card className="md:col-span-2">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -117,14 +117,14 @@ export default function BankStatementsPage() {
           </CardHeader>
           <CardContent>
             <div className="rounded-md border">
-              <div className="grid grid-cols-4 bg-muted/50 p-3 text-xs font-semibold text-muted-foreground">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 bg-muted/50 p-3 text-xs font-semibold text-muted-foreground">
                 <div>Date</div>
                 <div className="col-span-2">Narration</div>
                 <div className="text-right">Amount</div>
               </div>
               <div className="divide-y">
                 {recentTransactions.map((tx) => (
-                  <div key={tx.id} className="grid grid-cols-4 items-center p-3 text-sm">
+                  <div key={tx.id} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center p-3 text-sm">
                     <div className="text-xs text-muted-foreground">{new Date(tx.date).toLocaleDateString('en-GB')}</div>
                     <div className="col-span-2 font-mono text-xs truncate pr-4">{tx.description}</div>
                     <div className={`text-right font-bold font-mono ${tx.type === 'credit' ? 'text-emerald-500' : 'text-foreground'}`}>

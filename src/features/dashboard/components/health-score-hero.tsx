@@ -23,7 +23,7 @@ interface HealthScoreHeroProps {
 export function HealthScoreHero({ healthScore }: HealthScoreHeroProps) {
   return (
     <motion.div variants={staggerItem}>
-      <Card className="relative overflow-hidden p-6">
+      <Card className="relative overflow-hidden p-4 md:p-6">
         {/* Subtle gradient accent */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent" />
 

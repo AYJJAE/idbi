@@ -110,7 +110,7 @@ export function MockConsentWorkflow() {
                 {currentStep === 2 && (
                   <div className="space-y-4">
                     <h3 className="text-lg font-semibold text-foreground">Select Data Source</h3>
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {['HDFC Bank', 'ICICI Bank', 'Axis Bank', 'SBI'].map(bank => (
                         <div key={bank} className="p-3 border border-border rounded-lg bg-background hover:border-primary/50 cursor-pointer flex flex-col items-center gap-2">
                           <Landmark className="h-6 w-6 text-muted-foreground" />

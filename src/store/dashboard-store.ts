@@ -38,6 +38,10 @@ interface DashboardState {
   // Active Navigation
   activeNavItem: string;
   setActiveNavItem: (id: string) => void;
+
+  // Device Simulator
+  simulatorMode: 'desktop' | 'tablet' | 'phone';
+  setSimulatorMode: (mode: 'desktop' | 'tablet' | 'phone') => void;
 }
 
 // ---------------------------------------------------------------------------
@@ -83,6 +87,10 @@ export const useDashboardStore = create<DashboardState>()(
       activeNavItem: 'dashboard',
       setActiveNavItem: (id) =>
         set({ activeNavItem: id }),
+
+      // Device Simulator
+      simulatorMode: 'desktop',
+      setSimulatorMode: (mode) => set({ simulatorMode: mode }),
     }),
     {
       name: 'nexus-dashboard-state',
@@ -90,6 +98,7 @@ export const useDashboardStore = create<DashboardState>()(
         sidebarCollapsed: state.sidebarCollapsed,
         selectedTimePeriod: state.selectedTimePeriod,
         showBenchmarks: state.showBenchmarks,
+        simulatorMode: state.simulatorMode,
       }),
     }
   )

@@ -29,7 +29,7 @@ export default function UPIDataSourcePage() {
         }
       />
 
-      <div className="grid gap-6 md:grid-cols-4">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-4">
         <Card className="md:col-span-1 border-primary/20 bg-primary/5">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-primary">Merchant VPA</CardTitle>
@@ -76,7 +76,7 @@ export default function UPIDataSourcePage() {
         </Card>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-3">
         <Card className="md:col-span-2">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">

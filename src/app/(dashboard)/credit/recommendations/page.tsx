@@ -23,7 +23,7 @@ export default function AIRecommendationsPage() {
       />
 
       <Card className="border-secondary/20 bg-secondary/5">
-        <CardContent className="p-4 flex flex-col md:flex-row items-center gap-6">
+        <CardContent className="p-4 flex flex-col md:flex-row items-center gap-4 md:gap-6">
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary">
             <Sparkles className="h-6 w-6" />
           </div>
@@ -36,7 +36,7 @@ export default function AIRecommendationsPage() {
         </CardContent>
       </Card>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-3">
         {data.recommendedProducts.map((product: any, idx: number) => (
           <Card key={product.id} className="flex flex-col relative overflow-hidden group hover:border-primary/50 transition-colors">
             {product.likelihood === 'High' && (
@@ -58,7 +58,7 @@ export default function AIRecommendationsPage() {
                 <p className="text-[10px] uppercase text-muted-foreground font-semibold">Pre-Approved Limit</p>
                 <p className="text-2xl font-black text-foreground mt-0.5">{formatCurrency(product.amount)}</p>
               </div>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <div className="p-2 bg-muted/50 rounded border text-center">
                   <p className="text-[10px] text-muted-foreground">Est. Rate</p>
                   <p className="font-bold text-sm">{product.rate}% p.a.</p>

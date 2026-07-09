@@ -60,7 +60,7 @@ export function HealthRadarChart({ dimensions }: HealthRadarChartProps) {
 
   return (
     <motion.div variants={chartReveal} initial="hidden" animate="visible">
-      <Card className="p-6">
+      <Card className="p-4 md:p-6">
         <div className="mb-2">
           <h3 className="text-sm font-medium text-foreground">Financial Health Radar</h3>
           <p className="text-xs text-muted-foreground">5-dimension assessment</p>

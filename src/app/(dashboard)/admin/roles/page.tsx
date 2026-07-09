@@ -15,7 +15,7 @@ export default function RolesPage() {
         description="Configure permissions for different organizational roles."
       />
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">

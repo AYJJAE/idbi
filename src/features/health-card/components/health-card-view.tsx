@@ -75,9 +75,9 @@ export function HealthCardView() {
 
       {/* Score Summary Card */}
       <motion.div variants={staggerItem}>
-        <Card className="relative overflow-hidden p-6">
+        <Card className="relative overflow-hidden p-4 md:p-6">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-chart-5/[0.02]" />
-          <div className="relative flex flex-col items-center gap-6 lg:flex-row lg:items-start lg:gap-10">
+          <div className="relative flex flex-col items-center gap-4 md:gap-6 lg:flex-row lg:items-start lg:gap-10">
             {/* Score Ring */}
             <div className="flex flex-col items-center gap-3">
               <NexusScoreRing score={healthScore.overall} size="xl" showGrade />
@@ -157,7 +157,7 @@ export function HealthCardView() {
       </motion.div>
 
       {/* Charts Row */}
-      <motion.div variants={staggerItem} className="grid gap-6 lg:grid-cols-2">
+      <motion.div variants={staggerItem} className="grid gap-4 md:gap-6 lg:grid-cols-2">
         <ScoreHistoryChart data={scoreHistory} />
         <PeerComparison data={peerComparison} />
       </motion.div>

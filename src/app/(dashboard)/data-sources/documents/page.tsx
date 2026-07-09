@@ -39,7 +39,7 @@ export default function DocumentVaultPage() {
         }
       />
 
-      <div className="grid gap-6 md:grid-cols-4">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-4">
         <Card className="md:col-span-1 bg-primary/5 border-primary/20">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-primary">Storage Used</CardTitle>

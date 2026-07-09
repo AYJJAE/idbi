@@ -29,7 +29,7 @@ export default function LoanEligibilityPage() {
       />
 
       <Card className="bg-primary/5 border-primary/20">
-        <CardContent className="p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <CardContent className="p-4 md:p-6 lg:p-8 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
           <div>
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-2">Maximum Eligible Limit</p>
             <div className="text-5xl font-black text-foreground">
@@ -50,7 +50,7 @@ export default function LoanEligibilityPage() {
         </CardContent>
       </Card>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-3">
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">Debt Service Coverage Ratio (DSCR)</CardTitle>

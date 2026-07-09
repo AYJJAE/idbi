@@ -35,7 +35,7 @@ export default function GSTDataSourcePage() {
         }
       />
 
-      <div className="grid gap-6 md:grid-cols-4">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-4">
         <Card className="md:col-span-1">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">GSTIN Status</CardTitle>
@@ -69,7 +69,7 @@ export default function GSTDataSourcePage() {
             <CardTitle className="text-sm font-medium text-muted-foreground">ITC vs Liability (Latest Month)</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <p className="text-[10px] text-muted-foreground uppercase">Input Tax Credit (ITC)</p>
                 <p className="text-2xl font-bold text-emerald-500">{formatCurrency(data.totalInputTaxCredit)}</p>
@@ -83,7 +83,7 @@ export default function GSTDataSourcePage() {
         </Card>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-3">
         <Card className="md:col-span-2">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -117,7 +117,7 @@ export default function GSTDataSourcePage() {
             <CardDescription>GSTR-2A/2B Reconciliation</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
-            <div className="flex flex-col items-center justify-center p-6 border rounded-lg bg-muted/30">
+            <div className="flex flex-col items-center justify-center p-4 md:p-6 border rounded-lg bg-muted/30">
               <div className="relative flex items-center justify-center h-24 w-24 rounded-full border-4 border-emerald-500 mb-4">
                 <span className="text-2xl font-bold">{data.invoicesMatched}%</span>
               </div>

@@ -31,7 +31,7 @@ export default function RiskRadarPage() {
         prompt={PROMPTS.RISK_ANALYSIS} 
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-3">
         <Card className="md:col-span-1">
           <CardHeader>
             <CardTitle>Overall Risk Index</CardTitle>

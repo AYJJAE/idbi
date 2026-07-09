@@ -14,7 +14,7 @@ export default function UliPage() {
         description="Frictionless credit via standard API-based integrations for lenders."
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
         {/* Left Column */}
         <div className="md:col-span-1 space-y-6">
           <Card className="bg-amber-500/10 border-amber-500/20">
@@ -92,7 +92,7 @@ export default function UliPage() {
               <CardTitle>Lending Workflow</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-6 bg-black/10 rounded-lg border border-border/50 overflow-x-auto">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-4 md:p-6 bg-black/10 rounded-lg border border-border/50 overflow-x-auto">
                 <div className="text-center min-w-[100px]">
                   <div className="h-12 w-12 mx-auto bg-blue-500/10 text-blue-500 rounded-full flex items-center justify-center border border-blue-500/20 mb-2">
                     <span className="font-bold">1</span>

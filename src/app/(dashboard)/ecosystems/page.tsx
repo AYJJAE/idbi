@@ -45,7 +45,7 @@ export default function EcosystemsOverviewPage() {
           return (
             <motion.div key={kpi.label} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
               <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-                <CardContent className="p-6 flex items-center gap-4">
+                <CardContent className="p-4 md:p-6 flex items-center gap-4">
                   <div className={`h-12 w-12 rounded-lg flex items-center justify-center ${kpi.bg} ${kpi.color}`}>
                     <Icon className="h-6 w-6" />
                   </div>
@@ -60,13 +60,13 @@ export default function EcosystemsOverviewPage() {
         })}
       </div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6">
         {/* Architecture Diagram */}
         <Card className="xl:col-span-2 bg-card/50 backdrop-blur-sm border-border/50">
           <CardHeader>
             <CardTitle>Integration Architecture</CardTitle>
           </CardHeader>
-          <CardContent className="flex justify-center bg-black/5 rounded-lg mx-6 mb-6 p-6 border border-border/50">
+          <CardContent className="flex justify-center bg-black/5 rounded-lg mx-6 mb-6 p-4 md:p-6 border border-border/50">
             <ArchitectureDiagram />
           </CardContent>
         </Card>

@@ -28,9 +28,9 @@ export function DashboardSkeleton({ className }: { className?: string }) {
       </div>
 
       {/* Score + KPI Grid */}
-      <div className="grid gap-6 lg:grid-cols-5">
+      <div className="grid gap-4 md:gap-6 lg:grid-cols-5">
         {/* Score Ring */}
-        <Card className="flex items-center justify-center p-8 lg:col-span-1">
+        <Card className="flex items-center justify-center p-4 md:p-6 lg:p-8 lg:col-span-1">
           <Skeleton className="h-40 w-40 rounded-full" />
         </Card>
         {/* KPI Cards */}
@@ -54,9 +54,9 @@ export function DashboardSkeleton({ className }: { className?: string }) {
       </div>
 
       {/* Charts Row */}
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-4 md:gap-6 lg:grid-cols-2">
         {Array.from({ length: 2 }).map((_, i) => (
-          <Card key={i} className="p-6">
+          <Card key={i} className="p-4 md:p-6">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <Skeleton className="h-5 w-36" />
@@ -69,14 +69,14 @@ export function DashboardSkeleton({ className }: { className?: string }) {
       </div>
 
       {/* Bottom Row */}
-      <div className="grid gap-6 lg:grid-cols-2">
-        <Card className="p-6">
+      <div className="grid gap-4 md:gap-6 lg:grid-cols-2">
+        <Card className="p-4 md:p-6">
           <div className="space-y-4">
             <Skeleton className="h-5 w-32" />
             <Skeleton className="h-48 w-full rounded-lg" />
           </div>
         </Card>
-        <Card className="p-6">
+        <Card className="p-4 md:p-6">
           <div className="space-y-4">
             <Skeleton className="h-5 w-28" />
             {Array.from({ length: 4 }).map((_, i) => (

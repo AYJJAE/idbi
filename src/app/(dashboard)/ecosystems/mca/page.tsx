@@ -14,7 +14,7 @@ export default function McaPage() {
         actions={<Button variant="outline" size="sm">Fetch ROC Details</Button>}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <Card className="bg-card/50 backdrop-blur-sm border-border/50">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">

@@ -118,22 +118,22 @@ export const DIMENSION_THRESHOLDS = {
 // ---------------------------------------------------------------------------
 
 export const CHART_COLORS = {
-  primary: '#00836C',     // Primary Green
-  secondary: '#00D4A8',   // Light Green variant
-  success: '#00836C',     // Primary Green
-  warning: '#F58220',     // Primary Orange
-  danger: '#F58220',      // Primary Orange (reusing as warning/danger per strict palette)
+  primary: '#008C5A',     // Primary Green
+  secondary: '#2DBE7F',   // Light Green variant
+  success: '#008C5A',     // Primary Green
+  warning: '#2DBE7F',     // Light Green
+  danger: '#006C45',      // Dark Green
   info: '#333333',        // Neutral
-  cyan: '#00836C',        // Primary Green
+  cyan: '#008C5A',        // Primary Green
   muted: '#888888',       // Neutral muted
 } as const;
 
 export const DIMENSION_COLORS: Record<string, string> = {
-  liquidity: '#00836C',
-  profitability: '#00D4A8',
-  solvency: '#F58220',
+  liquidity: '#008C5A',
+  profitability: '#2DBE7F',
+  solvency: '#006C45',
   efficiency: '#333333',
-  growth: '#00836C',
+  growth: '#008C5A',
 };
 
 // ---------------------------------------------------------------------------

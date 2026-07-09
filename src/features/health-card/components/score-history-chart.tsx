@@ -88,7 +88,7 @@ export function ScoreHistoryChart({ data }: ScoreHistoryChartProps) {
 
   return (
     <motion.div variants={chartReveal} initial="hidden" animate="visible">
-      <Card className="p-6">
+      <Card className="p-4 md:p-6">
         <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h3 className="text-sm font-semibold text-foreground">Score History</h3>

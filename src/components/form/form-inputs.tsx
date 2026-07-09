@@ -324,7 +324,7 @@ export function FormDocumentUpload({
             }}
             transition={{ type: 'spring', stiffness: 400, damping: 30 }}
             className={cn(
-              'relative flex flex-col items-center justify-center rounded-xl border border-dashed p-6 text-center cursor-pointer',
+              'relative flex flex-col items-center justify-center rounded-xl border border-dashed p-4 md:p-6 text-center cursor-pointer',
               disabled && 'opacity-50 pointer-events-none'
             )}
             onDragOver={(e: any) => {

@@ -27,7 +27,7 @@ export default function PaymentBehaviourPage() {
         }
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-3">
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">Average Debtor Days</CardTitle>
@@ -74,7 +74,7 @@ export default function PaymentBehaviourPage() {
         </Card>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Supplier Payment Delays</CardTitle>

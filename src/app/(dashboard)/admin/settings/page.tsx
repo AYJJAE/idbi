@@ -18,7 +18,7 @@ export default function SettingsPage() {
       />
 
       <Tabs defaultValue="general" className="w-full">
-        <TabsList className="grid w-full grid-cols-4 max-w-[600px]">
+        <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-[600px]">
           <TabsTrigger value="general"><Building2 className="h-4 w-4 mr-2" /> General</TabsTrigger>
           <TabsTrigger value="security"><Key className="h-4 w-4 mr-2" /> Security</TabsTrigger>
           <TabsTrigger value="notifications"><Bell className="h-4 w-4 mr-2" /> Alerts</TabsTrigger>
@@ -36,7 +36,7 @@ export default function SettingsPage() {
                 <CardDescription>Update fundamental organization details.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label>Organization Name</Label>
                     <Input defaultValue="NEXUS Global Financial" />

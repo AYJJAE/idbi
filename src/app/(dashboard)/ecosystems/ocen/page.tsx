@@ -34,7 +34,7 @@ export default function OcenPage() {
         description="Decentralized loan marketplace for MSME credit."
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
         {/* Sidebar Info */}
         <div className="md:col-span-1 space-y-6">
           <Card className="bg-cyan-500/10 border-cyan-500/20">
@@ -125,7 +125,7 @@ export default function OcenPage() {
                                   <p className="text-sm font-bold text-emerald-500">{offer.prob} Match</p>
                                 </div>
                               </div>
-                              <div className="grid grid-cols-3 gap-2 text-sm pt-4 border-t border-border/50">
+                              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 text-sm pt-4 border-t border-border/50">
                                 <div>
                                   <p className="text-xs text-muted-foreground">Amount</p>
                                   <p className="font-medium">{offer.amount}</p>

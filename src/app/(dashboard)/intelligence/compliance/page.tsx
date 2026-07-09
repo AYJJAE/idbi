@@ -26,7 +26,7 @@ export default function ComplianceMonitorPage() {
         }
       />
 
-      <div className="grid gap-6 md:grid-cols-4">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-4">
         <Card className="md:col-span-1 bg-primary/5 border-primary/20">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-primary">Compliance Score</CardTitle>
@@ -80,14 +80,14 @@ export default function ComplianceMonitorPage() {
         </CardHeader>
         <CardContent>
           <div className="rounded-md border">
-            <div className="grid grid-cols-3 bg-muted/50 p-3 text-xs font-semibold text-muted-foreground">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 bg-muted/50 p-3 text-xs font-semibold text-muted-foreground">
               <div>Return Period</div>
               <div>Filing Status</div>
               <div className="text-right">Delay / Penalty Risk</div>
             </div>
             <div className="divide-y">
               {data.gstFilings.map((filing: any, i: number) => (
-                <div key={i} className="grid grid-cols-3 items-center p-3 text-sm">
+                <div key={i} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center p-3 text-sm">
                   <div className="font-medium">{filing.period}</div>
                   <div>
                     <Badge variant={filing.status === 'Filed On Time' ? 'default' : filing.status === 'Pending' ? 'outline' : 'secondary'} 

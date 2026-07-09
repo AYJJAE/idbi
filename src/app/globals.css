@@ -6,7 +6,7 @@
 
 /* ============================================================================
    NEXUS Design System — Premium Enterprise Fintech
-   Brand: #00836C (Green) · #F58220 (Orange) · #333333 (Neutral)
+   Brand: #008C5A (IDBI Green) · #2DBE7F (Light Green) · #333333 (Neutral)
    Inspired by: Apple HIG · Stripe · Linear · Vercel · Bloomberg
    ============================================================================ */
 
@@ -73,21 +73,21 @@
   --card-foreground: #333333;
   --popover: #FFFFFF;
   --popover-foreground: #333333;
-  --primary: #00836C;
+  --primary: #008C5A;
   --primary-foreground: #FFFFFF;
   --secondary: #F4F7F8;
   --secondary-foreground: #333333;
   --muted: #F4F7F8;
   --muted-foreground: #6B7280;
   --accent: #F4F7F8;
-  --accent-foreground: #00836C;
+  --accent-foreground: #008C5A;
   --destructive: #DC2626;
   --border: rgba(0, 0, 0, 0.08);
   --input: rgba(0, 0, 0, 0.08);
-  --ring: #00836C;
+  --ring: #008C5A;
   
-  --chart-1: #00836C;
-  --chart-2: #F58220;
+  --chart-1: #008C5A;
+  --chart-2: #2DBE7F;
   --chart-3: #333333;
   --chart-4: #4B5563;
   --chart-5: #9CA3AF;
@@ -97,12 +97,12 @@
   /* Sidebar — deep dark glass */
   --sidebar: #0D1117;
   --sidebar-foreground: rgba(255, 255, 255, 0.88);
-  --sidebar-primary: #00836C;
+  --sidebar-primary: #008C5A;
   --sidebar-primary-foreground: #0D1117;
-  --sidebar-accent: rgba(0, 131, 108, 0.10);
+  --sidebar-accent: rgba(0, 140, 90, 0.10);
   --sidebar-accent-foreground: #FFFFFF;
   --sidebar-border: rgba(255, 255, 255, 0.06);
-  --sidebar-ring: #00836C;
+  --sidebar-ring: #008C5A;
 }
 
 /* --------------------------------------------------------------------------
@@ -111,27 +111,27 @@
    -------------------------------------------------------------------------- */
 
 .dark {
-  --background: #0B1014;
+  --background: #0B1114;
   --foreground: #FFFFFF;
   --card: #121821;
   --card-foreground: #FFFFFF;
   --popover: #121821;
   --popover-foreground: #FFFFFF;
-  --primary: #00836C;
+  --primary: #008C5A;
   --primary-foreground: #FFFFFF;
   --secondary: #121821;
   --secondary-foreground: #FFFFFF;
   --muted: #121821;
   --muted-foreground: #A1A1AA;
   --accent: #121821;
-  --accent-foreground: #00836C;
+  --accent-foreground: #008C5A;
   --destructive: #DC2626;
   --border: rgba(255, 255, 255, 0.08);
   --input: rgba(255, 255, 255, 0.08);
-  --ring: #00836C;
+  --ring: #008C5A;
   
-  --chart-1: #00836C;
-  --chart-2: #F58220;
+  --chart-1: #008C5A;
+  --chart-2: #2DBE7F;
   --chart-3: #333333;
   --chart-4: #4B5563;
   --chart-5: #9CA3AF;
@@ -139,12 +139,12 @@
   /* Sidebar — deeper dark glass */
   --sidebar: #060A0E;
   --sidebar-foreground: rgba(255, 255, 255, 0.82);
-  --sidebar-primary: #00836C;
+  --sidebar-primary: #008C5A;
   --sidebar-primary-foreground: #060A0E;
-  --sidebar-accent: rgba(0, 131, 108, 0.08);
+  --sidebar-accent: rgba(0, 140, 90, 0.08);
   --sidebar-accent-foreground: #FFFFFF;
   --sidebar-border: rgba(255, 255, 255, 0.04);
-  --sidebar-ring: #00836C;
+  --sidebar-ring: #008C5A;
 }
 
 /* --------------------------------------------------------------------------
@@ -189,8 +189,8 @@
 }
 
 @keyframes nexus-pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 131, 108, 0.35); }
-  50% { box-shadow: 0 0 0 8px rgba(0, 131, 108, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 140, 90, 0.35); }
+  50% { box-shadow: 0 0 0 8px rgba(0, 140, 90, 0); }
 }
 
 @keyframes nexus-score-fill {
@@ -314,7 +314,7 @@
   .nexus-card:hover {
     @apply shadow-lg;
     transform: translateY(-1px);
-    border-color: rgba(0, 131, 108, 0.12);
+    border-color: rgba(0, 140, 90, 0.12);
   }
 
   .nexus-card-flat {
@@ -327,12 +327,12 @@
   /* Gradient text */
   .nexus-gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #00836C, #00D4A8);
+    background-image: linear-gradient(135deg, #008C5A, #2DBE7F);
   }
 
   .nexus-gradient-text-warm {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #F58220, #FFB347);
+    background-image: linear-gradient(135deg, #008C5A, #2DBE7F);
   }
 
   /* Section title */
@@ -392,7 +392,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, rgba(0, 131, 108, 0.2), rgba(245, 130, 32, 0.15), rgba(0, 131, 108, 0.1));
+    background: linear-gradient(135deg, rgba(0, 140, 90, 0.2), rgba(45, 190, 127, 0.15), rgba(0, 140, 90, 0.1));
     background-size: 200% 200%;
     animation: nexus-gradient-border 6s ease infinite;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -422,24 +422,24 @@
     background: transparent;
   }
   .nexus-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(0, 131, 108, 0.15);
+    background: rgba(0, 140, 90, 0.15);
     border-radius: 3px;
   }
   .nexus-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 131, 108, 0.3);
+    background: rgba(0, 140, 90, 0.3);
   }
 
   /* Firefox scrollbar */
   .nexus-scrollbar {
     scrollbar-width: thin;
-    scrollbar-color: rgba(0, 131, 108, 0.15) transparent;
+    scrollbar-color: rgba(0, 140, 90, 0.15) transparent;
   }
 
   /* Grid texture overlay */
   .nexus-grid-texture {
     background-image:
-      linear-gradient(rgba(0, 131, 108, 0.015) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 131, 108, 0.015) 1px, transparent 1px);
+      linear-gradient(rgba(0, 140, 90, 0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 140, 90, 0.015) 1px, transparent 1px);
     background-size: 48px 48px;
   }
 }

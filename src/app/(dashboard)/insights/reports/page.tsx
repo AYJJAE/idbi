@@ -18,7 +18,7 @@ export default function ReportsPage() {
         description="Generate formatted PDFs, presentations, and Excel dumps for committees."
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 md:gap-6 md:grid-cols-3">
         <Card className="hover:border-primary/50 transition-colors cursor-pointer group">
           <CardHeader>
             <div className="h-12 w-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">

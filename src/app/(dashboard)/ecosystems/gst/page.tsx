@@ -25,14 +25,14 @@ export default function GstPage() {
         }
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         <Card className="bg-card/50 backdrop-blur-sm border-border/50 md:col-span-2">
           <CardHeader>
             <CardTitle>GST Profile</CardTitle>
             <CardDescription>Verified business information from GSTN.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-4">
               <div className="space-y-1">
                 <span className="text-xs text-muted-foreground">GSTIN</span>
                 <p className="font-mono text-sm font-medium">29ABCDE1234F1Z5</p>

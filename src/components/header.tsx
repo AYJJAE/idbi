@@ -5,7 +5,7 @@
 // =============================================================================
 
 import * as React from 'react';
-import { Search, Building2, ChevronDown } from 'lucide-react';
+import { Search, Building2, ChevronDown, Monitor, Tablet, Smartphone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { tokens } from '@/design/tokens';
 import { Badge } from '@/components/ui/badge';
@@ -85,12 +85,46 @@ export function Header() {
 
       {/* Right: Actions */}
       <div className="flex items-center gap-2.5">
+        {/* Device Simulator Toggle */}
+        <div className="hidden lg:flex items-center gap-1 bg-card border border-border rounded-lg p-1 h-8">
+          <button
+            onClick={() => useDashboardStore.getState().setSimulatorMode('desktop')}
+            className={cn(
+              "p-1 rounded-md transition-colors",
+              useDashboardStore((s) => s.simulatorMode) === 'desktop' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+            )}
+            title="Desktop View"
+          >
+            <Monitor className="h-3.5 w-3.5" />
+          </button>
+          <button
+            onClick={() => useDashboardStore.getState().setSimulatorMode('tablet')}
+            className={cn(
+              "p-1 rounded-md transition-colors",
+              useDashboardStore((s) => s.simulatorMode) === 'tablet' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+            )}
+            title="Tablet View"
+          >
+            <Tablet className="h-3.5 w-3.5" />
+          </button>
+          <button
+            onClick={() => useDashboardStore.getState().setSimulatorMode('phone')}
+            className={cn(
+              "p-1 rounded-md transition-colors",
+              useDashboardStore((s) => s.simulatorMode) === 'phone' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+            )}
+            title="Phone View"
+          >
+            <Smartphone className="h-3.5 w-3.5" />
+          </button>
+        </div>
+
         {/* Demo Mode Badge */}
         <Badge
           variant="outline"
-          className="h-6 border-[#00836C]/20 bg-[#00836C]/6 text-[#00836C] dark:text-[#00D4A8] dark:border-[#00D4A8]/20 dark:bg-[#00D4A8]/8 font-medium px-2.5 text-[11px] gap-1.5"
+          className="h-6 border-[#008C5A]/20 bg-[#008C5A]/6 text-[#008C5A] dark:text-[#2DBE7F] dark:border-[#2DBE7F]/20 dark:bg-[#2DBE7F]/8 font-medium px-2.5 text-[11px] gap-1.5 hidden sm:flex"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-[#00836C] dark:bg-[#00D4A8] animate-pulse" />
+          <span className="h-1.5 w-1.5 rounded-full bg-[#008C5A] dark:bg-[#2DBE7F] animate-pulse" />
           Demo
         </Badge>
 

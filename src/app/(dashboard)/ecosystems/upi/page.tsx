@@ -20,7 +20,7 @@ export default function UpiPage() {
         }
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
         {[
           { title: 'Total Collections (MTD)', value: '₹14.5L', trend: '+12%', up: true },
           { title: 'Transaction Count', value: '1,245', trend: '+5%', up: true },
@@ -29,7 +29,7 @@ export default function UpiPage() {
         ].map((stat, i) => (
           <motion.div key={stat.title} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
             <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-              <CardContent className="p-6">
+              <CardContent className="p-4 md:p-6">
                 <div className="flex justify-between items-start">
                   <div className="space-y-2">
                     <p className="text-sm font-medium text-muted-foreground">{stat.title}</p>

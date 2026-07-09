@@ -33,7 +33,7 @@ export function ApiExplorer() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
       {/* Sidebar / Configuration */}
       <Card className="lg:col-span-1 bg-card/50 backdrop-blur-sm border-border/50">
         <CardHeader>

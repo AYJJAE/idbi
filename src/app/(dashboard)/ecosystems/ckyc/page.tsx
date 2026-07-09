@@ -15,7 +15,7 @@ export default function CkycPage() {
         actions={<Button variant="outline" size="sm">Initiate KYC Sync</Button>}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         <Card className="bg-card/50 backdrop-blur-sm border-border/50 lg:col-span-2">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -38,7 +38,7 @@ export default function CkycPage() {
                 </div>
                 <Badge variant="outline" className="bg-emerald-500/10 text-emerald-500 border-emerald-500/20">Verified</Badge>
               </div>
-              <div className="grid grid-cols-2 gap-4 mt-4 pt-4 border-t border-border/50 text-sm">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 pt-4 border-t border-border/50 text-sm">
                 <div>
                   <span className="text-muted-foreground block text-xs">PAN Status</span>
                   <span className="font-medium flex items-center gap-1"><ShieldCheck className="h-3 w-3 text-emerald-500" /> Valid</span>

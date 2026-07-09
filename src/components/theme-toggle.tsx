@@ -38,7 +38,7 @@ export function ThemeToggle() {
             initial={{ y: -16, opacity: 0, rotate: -45 }}
             animate={{ y: 0, opacity: 1, rotate: 0 }}
             exit={{ y: 16, opacity: 0, rotate: 45 }}
-            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
             <Moon className="h-4 w-4 text-muted-foreground" />
           </motion.div>
@@ -48,7 +48,7 @@ export function ThemeToggle() {
             initial={{ y: -16, opacity: 0, rotate: 45 }}
             animate={{ y: 0, opacity: 1, rotate: 0 }}
             exit={{ y: 16, opacity: 0, rotate: -45 }}
-            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
             <Sun className="h-4 w-4 text-muted-foreground" />
           </motion.div>

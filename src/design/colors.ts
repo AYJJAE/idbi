@@ -1,13 +1,13 @@
 // ============================================================================
 // NEXUS Design System — Colors
 // Centralized Source of Truth for all color values.
-// Only brand colors: #00836C (Primary), #F58220 (Orange), #333333 (Neutral)
+// Only brand colors: #008C5A (IDBI Green), #2DBE7F (Light Green), #1F2937 (Neutral)
 // ============================================================================
 
 export const brand = {
-  primary: '#00836C', // Premium Green
-  secondary: '#F58220', // Vibrant Orange
-  neutral: '#333333', // Deep Gray/Black
+  primary: '#008C5A', // IDBI Green
+  secondary: '#2DBE7F', // Light Green
+  neutral: '#1F2937', // Neutral Text
 };
 
 export const semantic = {
@@ -18,8 +18,8 @@ export const semantic = {
 };
 
 export const lightMode = {
-  background: '#FAFBFC',
-  secondaryBackground: '#F4F7F8',
+  background: '#FFFFFF',
+  secondaryBackground: '#F5F7F8',
   surface: '#FFFFFF',
   text: {
     primary: brand.neutral,
@@ -34,7 +34,7 @@ export const lightMode = {
 };
 
 export const darkMode = {
-  background: '#0B1014',
+  background: '#0B1114',
   secondaryBackground: '#121821', // Surface color requested in prompt
   surface: '#121821',
   text: {

@@ -63,7 +63,7 @@ interface RevenueTrendChartProps {
 export function RevenueTrendChart({ data }: RevenueTrendChartProps) {
   return (
     <motion.div variants={chartReveal} initial="hidden" animate="visible">
-      <Card className="p-6">
+      <Card className="p-4 md:p-6">
         <div className="mb-4 flex items-center justify-between">
           <div>
             <h3 className="text-sm font-medium text-foreground">Revenue & Profit Trend</h3>

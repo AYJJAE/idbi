@@ -19,7 +19,7 @@ export default function EpfoPage() {
         }
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         <Card className="bg-card/50 backdrop-blur-sm border-border/50">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm text-muted-foreground">Active Employees</CardTitle>

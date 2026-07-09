@@ -60,7 +60,7 @@ export function DashboardView() {
       />
 
       {/* Row 1: Health Score + KPI Grid */}
-      <motion.div variants={staggerItem} className="grid gap-6 lg:grid-cols-5">
+      <motion.div variants={staggerItem} className="grid gap-4 md:gap-6 lg:grid-cols-5">
         <div className="lg:col-span-1">
           <HealthScoreHero healthScore={data.healthScore} />
         </div>
@@ -70,13 +70,13 @@ export function DashboardView() {
       </motion.div>
 
       {/* Row 2: Revenue Trend + Cashflow */}
-      <motion.div variants={staggerItem} className="grid gap-6 lg:grid-cols-2">
+      <motion.div variants={staggerItem} className="grid gap-4 md:gap-6 lg:grid-cols-2">
         <RevenueTrendChart data={data.revenueTrend} />
         <CashflowChart data={data.cashflowData} />
       </motion.div>
 
       {/* Row 3: Radar + Activity */}
-      <motion.div variants={staggerItem} className="grid gap-6 lg:grid-cols-2">
+      <motion.div variants={staggerItem} className="grid gap-4 md:gap-6 lg:grid-cols-2">
         <div className="lg:col-span-1">
           <HealthRadarChart dimensions={data.healthScore.dimensions} />
         </div>

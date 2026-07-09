@@ -82,7 +82,7 @@ interface RecentActivityProps {
 
 export function RecentActivity({ events }: RecentActivityProps) {
   return (
-    <Card className="flex h-full flex-col p-6">
+    <Card className="flex h-full flex-col p-4 md:p-6">
       <div className="mb-3 flex items-center justify-between">
         <h3 className="text-sm font-medium text-foreground">Recent Activity</h3>
         <button className="text-xs font-medium text-primary hover:underline">
