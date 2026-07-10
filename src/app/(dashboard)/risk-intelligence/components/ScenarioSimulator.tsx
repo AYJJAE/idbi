@@ -2,14 +2,13 @@
 
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Slider } from '@/components/ui/slider';
 import { Button } from '@/components/ui/button';
 import { Sparkles, ArrowRight, Activity, Percent, ShieldCheck, AlertTriangle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function ScenarioSimulator() {
-  const [revenueChange, setRevenueChange] = useState([0]);
-  const [expenseChange, setExpenseChange] = useState([0]);
+  const [revenueChange, setRevenueChange] = useState(0);
+  const [expenseChange, setExpenseChange] = useState(0);
   const [isSimulating, setIsSimulating] = useState(false);
   const [hasSimulated, setHasSimulated] = useState(false);
   const [randomVariance, setRandomVariance] = useState(0);
@@ -24,8 +23,8 @@ export function ScenarioSimulator() {
 
   // Simulated Metrics
   const simMetrics = {
-    pd: baseMetrics.pd + (revenueChange[0] < 0 ? Math.abs(revenueChange[0]) * 0.15 : -revenueChange[0] * 0.05) + (expenseChange[0] * 0.1) + randomVariance,
-    health: baseMetrics.health + (revenueChange[0] * 1.5) - (expenseChange[0] * 2) - (randomVariance * 10),
+    pd: baseMetrics.pd + (revenueChange < 0 ? Math.abs(revenueChange) * 0.15 : -revenueChange * 0.05) + (expenseChange * 0.1) + randomVariance,
+    health: baseMetrics.health + (revenueChange * 1.5) - (expenseChange * 2) - (randomVariance * 10),
   };
 
   const getRiskCategory = (health: number) => {
@@ -47,8 +46,8 @@ export function ScenarioSimulator() {
   };
 
   const reset = () => {
-    setRevenueChange([0]);
-    setExpenseChange([0]);
+    setRevenueChange(0);
+    setExpenseChange(0);
     setHasSimulated(false);
   };
 
@@ -77,17 +76,18 @@ export function ScenarioSimulator() {
             <div className="space-y-3">
               <div className="flex justify-between items-center">
                 <label className="text-sm font-medium">Revenue / Salary Change</label>
-                <span className={`text-sm font-bold ${revenueChange[0] > 0 ? 'text-emerald-500' : revenueChange[0] < 0 ? 'text-red-500' : ''}`}>
-                  {revenueChange[0] > 0 ? '+' : ''}{revenueChange[0]}%
+                <span className={`text-sm font-bold ${revenueChange > 0 ? 'text-emerald-500' : revenueChange < 0 ? 'text-red-500' : ''}`}>
+                  {revenueChange > 0 ? '+' : ''}{revenueChange}%
                 </span>
               </div>
-              <Slider
+              <input
+                type="range"
                 value={revenueChange}
-                onValueChange={setRevenueChange}
+                onChange={(e) => setRevenueChange(Number(e.target.value))}
                 min={-50}
                 max={50}
                 step={5}
-                className="w-full"
+                className="w-full accent-primary"
               />
               <p className="text-xs text-muted-foreground text-center">Simulate market slowdown or business expansion.</p>
             </div>
@@ -95,17 +95,18 @@ export function ScenarioSimulator() {
             <div className="space-y-3 pt-4 border-t border-border">
               <div className="flex justify-between items-center">
                 <label className="text-sm font-medium">Expense Variance</label>
-                <span className={`text-sm font-bold ${expenseChange[0] > 0 ? 'text-red-500' : expenseChange[0] < 0 ? 'text-emerald-500' : ''}`}>
-                  {expenseChange[0] > 0 ? '+' : ''}{expenseChange[0]}%
+                <span className={`text-sm font-bold ${expenseChange > 0 ? 'text-red-500' : expenseChange < 0 ? 'text-emerald-500' : ''}`}>
+                  {expenseChange > 0 ? '+' : ''}{expenseChange}%
                 </span>
               </div>
-              <Slider
+              <input
+                type="range"
                 value={expenseChange}
-                onValueChange={setExpenseChange}
+                onChange={(e) => setExpenseChange(Number(e.target.value))}
                 min={-30}
                 max={50}
                 step={5}
-                className="w-full"
+                className="w-full accent-primary"
               />
               <p className="text-xs text-muted-foreground text-center">Simulate inflation or operational cost spikes.</p>
             </div>

@@ -185,7 +185,7 @@ export function PortfolioRiskHeatmap() {
               The overall Portfolio Health Index is stable at <strong>84.2</strong>. However, there is a systemic vulnerability concentration in the <strong>Retail and Hospitality sectors</strong>, which account for 45% of the total High-Risk bucket.
             </p>
             <p className="text-muted-foreground">
-              <strong>Recommended Action:</strong> Temporarily tighten LTV (Loan-to-Value) ratios for new unsecured disbursements in the Hospitality sector in Maharashtra, and deploy early intervention campaigns for SME retailers showing >15% cash flow variance.
+              <strong>Recommended Action:</strong> Temporarily tighten LTV (Loan-to-Value) ratios for new unsecured disbursements in the Hospitality sector in Maharashtra, Launch retention campaigns for SME retailers showing &gt;15% cash flow variance.
             </p>
           </div>
         </CardContent>
