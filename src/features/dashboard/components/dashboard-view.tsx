@@ -18,9 +18,16 @@ import { useDashboardData } from '@/hooks/use-dashboard-data';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 import { Button } from '@/components/ui/button';
 import { Download, RefreshCcw } from 'lucide-react';
+import { useState } from 'react';
 
 export function DashboardView() {
   const { data, isLoading } = useDashboardData();
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  const handleRefresh = () => {
+    setIsRefreshing(true);
+    setTimeout(() => setIsRefreshing(false), 1000);
+  };
 
   if (isLoading || !data) {
     return (
@@ -47,13 +54,13 @@ export function DashboardView() {
         description={`Financial health overview for ${data.business.name}`}
         actions={
           <div className="flex gap-2">
-            <Button variant="outline" size="sm">
-              <RefreshCcw className="mr-1.5 h-3.5 w-3.5" />
-              Refresh
+            <Button variant="outline" size="sm" onClick={handleRefresh} disabled={isRefreshing}>
+              <RefreshCcw className={`mr-1.5 h-3.5 w-3.5 ${isRefreshing ? 'animate-spin text-primary' : ''}`} />
+              {isRefreshing ? 'Refreshing...' : 'Refresh'}
             </Button>
-            <Button size="sm">
+            <Button size="sm" onClick={() => window.print()}>
               <Download className="mr-1.5 h-3.5 w-3.5" />
-              Export
+              Export PDF
             </Button>
           </div>
         }

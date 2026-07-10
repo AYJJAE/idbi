@@ -60,14 +60,14 @@ export function HealthCardView() {
           { label: 'Health Card' },
         ]}
         actions={
-          <div className="flex gap-2">
-            <Button variant="outline" size="sm">
-              <Share2 className="mr-1.5 h-3.5 w-3.5" />
-              Share
-            </Button>
-            <Button size="sm">
+          <div className="flex gap-2 w-full sm:w-auto">
+            <Button variant="outline" size="sm" onClick={() => window.print()}>
               <Download className="mr-1.5 h-3.5 w-3.5" />
               Download PDF
+            </Button>
+            <Button size="sm">
+              <Share2 className="mr-1.5 h-3.5 w-3.5" />
+              Share
             </Button>
           </div>
         }

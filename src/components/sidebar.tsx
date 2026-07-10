@@ -40,6 +40,9 @@ import {
   Banknote,
   Braces,
   Lock,
+  Brain,
+  Gem,
+  TrendingDown,
   type LucideIcon,
 } from 'lucide-react';
 import { NAVIGATION, APP_NAME } from '@/lib/constants';
@@ -84,6 +87,9 @@ const ICON_MAP: Record<string, LucideIcon> = {
   Banknote,
   Braces,
   Lock,
+  Brain,
+  Gem,
+  TrendingDown,
 };
 
 export function Sidebar() {

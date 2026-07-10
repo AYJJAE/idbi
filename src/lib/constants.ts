@@ -32,6 +32,14 @@ export const NAVIGATION: NavGroup[] = [
     ],
   },
   {
+    label: 'Enterprise',
+    items: [
+      { id: 'lending-intelligence', label: 'Lending Intelligence', href: '/lending-intelligence', icon: 'Brain' },
+      { id: 'wealth-intelligence', label: 'Wealth Intelligence', href: '/wealth-intelligence', icon: 'Gem' },
+      { id: 'risk-intelligence', label: 'Risk Intelligence', href: '/risk-intelligence', icon: 'TrendingDown' },
+    ],
+  },
+  {
     label: 'Financial Intelligence',
     isDivider: true,
     items: [

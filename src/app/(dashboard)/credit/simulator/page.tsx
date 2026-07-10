@@ -95,7 +95,13 @@ export default function ScenarioSimulatorPage() {
             </div>
 
             <div className="pt-4 border-t flex gap-2">
-              <Button className="w-full" size="sm">
+              <Button className="w-full" size="sm" onClick={() => {
+                const btn = document.getElementById('sim-btn');
+                if (btn) btn.innerHTML = '<span class="animate-spin mr-2">⏳</span> Simulating...';
+                setTimeout(() => {
+                  if (btn) btn.innerHTML = 'Simulation Complete';
+                }, 1000);
+              }} id="sim-btn">
                 <Play className="mr-2 h-4 w-4" /> Simulate Cash Flow
               </Button>
             </div>
