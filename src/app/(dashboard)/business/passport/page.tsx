@@ -5,47 +5,33 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Download, 
   ShieldCheck, 
-  QrCode, 
   CheckCircle2,
   Fingerprint,
   FileDigit,
   Lock,
-  Globe,
   Maximize2,
   Minimize2,
-  Info,
   Layers,
   Sparkles,
   TrendingUp,
   TrendingDown,
-  Building,
-  Users,
-  CreditCard,
-  MapPin,
   Calendar,
   AlertTriangle,
   Play,
   RotateCcw,
-  ArrowRight,
   Database,
-  ArrowUpRight,
   Activity,
   Award,
   ChevronRight,
   ChevronDown
 } from 'lucide-react';
 import { useBusinessStore } from '@/store/business-store';
-import { extendedPassportData, ExtendedPassport, RelationshipNode, PassportTimelineEvent } from '@/data/passport-extended-data';
+import { extendedPassportData, RelationshipNode } from '@/data/passport-extended-data';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { 
   ResponsiveContainer, 
-  RadarChart, 
-  PolarGrid, 
-  PolarAngleAxis, 
-  PolarRadiusAxis, 
-  Radar, 
   BarChart, 
   Bar, 
   XAxis, 
@@ -78,19 +64,31 @@ export default function FinancialPassportPage() {
   const [dragStart, setDragStart] = React.useState({ x: 0, y: 0 });
 
   // Refs for Presentation Walkthrough
-  const sectionRefs = {
-    header: React.useRef<HTMLDivElement>(null),
-    identity: React.useRef<HTMLDivElement>(null),
-    dna: React.useRef<HTMLDivElement>(null),
-    explainability: React.useRef<HTMLDivElement>(null),
-    relationship: React.useRef<HTMLDivElement>(null),
-    timeline: React.useRef<HTMLDivElement>(null),
-    risks: React.useRef<HTMLDivElement>(null),
-    benchmarks: React.useRef<HTMLDivElement>(null),
-    evolution: React.useRef<HTMLDivElement>(null),
-    documents: React.useRef<HTMLDivElement>(null),
-    summary: React.useRef<HTMLDivElement>(null),
-  };
+  const headerRef = React.useRef<HTMLDivElement>(null);
+  const identityRef = React.useRef<HTMLDivElement>(null);
+  const dnaRef = React.useRef<HTMLDivElement>(null);
+  const explainabilityRef = React.useRef<HTMLDivElement>(null);
+  const relationshipRef = React.useRef<HTMLDivElement>(null);
+  const timelineRef = React.useRef<HTMLDivElement>(null);
+  const risksRef = React.useRef<HTMLDivElement>(null);
+  const benchmarksRef = React.useRef<HTMLDivElement>(null);
+  const evolutionRef = React.useRef<HTMLDivElement>(null);
+  const documentsRef = React.useRef<HTMLDivElement>(null);
+  const summaryRef = React.useRef<HTMLDivElement>(null);
+
+  const sectionRefs = React.useMemo(() => ({
+    header: headerRef,
+    identity: identityRef,
+    dna: dnaRef,
+    explainability: explainabilityRef,
+    relationship: relationshipRef,
+    timeline: timelineRef,
+    risks: risksRef,
+    benchmarks: benchmarksRef,
+    evolution: evolutionRef,
+    documents: documentsRef,
+    summary: summaryRef,
+  }), []);
 
   const steps = [
     { target: 'header', title: 'Financial Health Header', desc: 'Real-time corporate credit ranking, national percentile ranking and custom recommended credit limits.' },
@@ -186,6 +184,7 @@ export default function FinancialPassportPage() {
 
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -289,7 +288,7 @@ export default function FinancialPassportPage() {
 
       {/* BLOOMBERG TERMINAL HERO SCORE BANNER */}
       <div 
-        ref={sectionRefs.header} 
+        ref={headerRef} 
         className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 bg-slate-950/80 border border-slate-800 rounded-xl p-4 md:p-6 shadow-xl relative overflow-hidden"
       >
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
@@ -354,7 +353,7 @@ export default function FinancialPassportPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
         
         {/* BUSINESS IDENTITY CARD */}
-        <div ref={sectionRefs.identity} className="lg:col-span-1">
+        <div ref={identityRef} className="lg:col-span-1">
           <Card className="h-full border-border/60 shadow-sm relative overflow-hidden bg-card">
             <CardHeader className="border-b border-border/40 pb-4">
               <div className="flex items-center gap-3">
@@ -419,7 +418,7 @@ export default function FinancialPassportPage() {
         </div>
 
         {/* EXECUTIVE SUMMARY & BOARD SUMMARY */}
-        <div ref={sectionRefs.summary} className="lg:col-span-2">
+        <div ref={summaryRef} className="lg:col-span-2">
           <Card className="h-full border-border/60 shadow-sm">
             <CardHeader className="pb-3">
               <CardTitle className="text-base flex items-center gap-2">
@@ -477,7 +476,7 @@ export default function FinancialPassportPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
         
         {/* FINANCIAL DNA */}
-        <div ref={sectionRefs.dna} className="lg:col-span-1">
+        <div ref={dnaRef} className="lg:col-span-1">
           <Card className="h-full border-border/60 shadow-sm bg-slate-950 text-white">
             <CardHeader className="pb-2 border-b border-slate-800">
               <CardTitle className="text-base flex items-center justify-between">
@@ -582,7 +581,7 @@ export default function FinancialPassportPage() {
         </div>
 
         {/* EXPLAINABILITY ENGINE */}
-        <div ref={sectionRefs.explainability} className="lg:col-span-2">
+        <div ref={explainabilityRef} className="lg:col-span-2">
           <Card className="h-full border-border/60 shadow-sm">
             <CardHeader className="pb-3 border-b border-border/40">
               <CardTitle className="text-base flex items-center gap-2">
@@ -630,7 +629,7 @@ export default function FinancialPassportPage() {
                               <div className="space-y-1.5">
                                 <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block">EVIDENCE LOG</span>
                                 <p className="text-muted-foreground italic bg-muted/40 p-2 rounded border border-border/20">
-                                  "{exp.evidence}"
+                                  &quot;{exp.evidence}&quot;
                                 </p>
                               </div>
                             </div>
@@ -691,7 +690,7 @@ export default function FinancialPassportPage() {
       </div>
 
       {/* RELATIONSHIP INTELLIGENCE NETWORK GRAPH */}
-      <div ref={sectionRefs.relationship} className="w-full">
+      <div ref={relationshipRef} className="w-full">
         <Card className="border-border/60 shadow-sm relative overflow-hidden bg-card">
           <CardHeader className="pb-2 border-b border-border/40">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -907,7 +906,7 @@ export default function FinancialPassportPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
         
         {/* RISK RADAR LIST */}
-        <div ref={sectionRefs.risks} className="lg:col-span-1">
+        <div ref={risksRef} className="lg:col-span-1">
           <Card className="h-full border-border/60 shadow-sm">
             <CardHeader className="pb-3 border-b border-border/40">
               <CardTitle className="text-base flex items-center gap-2">
@@ -948,7 +947,7 @@ export default function FinancialPassportPage() {
         </div>
 
         {/* BENCHMARK PLOTS */}
-        <div ref={sectionRefs.benchmarks} className="lg:col-span-2">
+        <div ref={benchmarksRef} className="lg:col-span-2">
           <Card className="h-full border-border/60 shadow-sm">
             <CardHeader className="pb-3">
               <CardTitle className="text-base flex items-center gap-2">
@@ -997,7 +996,7 @@ export default function FinancialPassportPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
         
         {/* HEALTH EVOLUTION CHART */}
-        <div ref={sectionRefs.evolution} className="lg:col-span-1">
+        <div ref={evolutionRef} className="lg:col-span-1">
           <Card className="h-full border-border/60 shadow-sm">
             <CardHeader className="pb-3 border-b border-border/40">
               <div className="flex items-center justify-between">
@@ -1008,6 +1007,7 @@ export default function FinancialPassportPage() {
                   {['30D', '90D', '1Y', '3Y'].map((tab) => (
                     <button 
                       key={tab}
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
                       onClick={() => setEvolutionTab(tab as any)}
                       className={`text-[9px] font-bold px-2 py-1 rounded transition-all ${evolutionTab === tab ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}
                     >
@@ -1042,7 +1042,7 @@ export default function FinancialPassportPage() {
         </div>
 
         {/* BUSINESS TIMELINE */}
-        <div ref={sectionRefs.timeline} className="lg:col-span-2">
+        <div ref={timelineRef} className="lg:col-span-2">
           <Card className="h-full border-border/60 shadow-sm">
             <CardHeader className="pb-3 border-b border-border/40">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -1120,7 +1120,7 @@ export default function FinancialPassportPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
         
         {/* DOCUMENT INTELLIGENCE LIST */}
-        <div ref={sectionRefs.documents} className="lg:col-span-2">
+        <div ref={documentsRef} className="lg:col-span-2">
           <Card className="h-full border-border/60 shadow-sm">
             <CardHeader className="pb-3 border-b border-border/40">
               <CardTitle className="text-base flex items-center gap-2">

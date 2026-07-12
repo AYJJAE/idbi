@@ -9,7 +9,7 @@ import { intelligenceData as healthData } from '@/data/intelligence-data';
 import { creditData, insightsData } from '@/data/credit-insights-data';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Loader2, Bot, Sparkles } from 'lucide-react';
+import { Loader2, Sparkles } from 'lucide-react';
 
 interface AIInsightPageProps {
   title: string;
@@ -45,7 +45,7 @@ export function AIInsightPage({ title, description, prompt, icon = <Sparkles cla
         content: prompt
       });
     }
-  }, [currentBusiness, prompt]);
+  }, [currentBusiness, prompt, append, messages.length]);
 
   const aiMessage = messages.findLast(m => m.role === 'assistant');
 

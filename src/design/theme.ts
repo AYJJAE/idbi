@@ -5,7 +5,7 @@
 // Injects CSS variables derived from TS tokens into the document root.
 // ============================================================================
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { brand, semantic, lightMode, darkMode } from './colors';
 

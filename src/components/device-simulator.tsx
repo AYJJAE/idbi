@@ -4,17 +4,16 @@ import React, { useEffect, useState } from 'react';
 import { useDashboardStore } from '@/store/dashboard-store';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
-import { Monitor, Smartphone, Tablet } from 'lucide-react';
+import { Monitor } from 'lucide-react';
 
 export function DeviceSimulator({ children }: { children: React.ReactNode }) {
   const { simulatorMode, setSimulatorMode } = useDashboardStore();
-  const pathname = usePathname();
 
   const [mounted, setMounted] = useState(false);
   const [isIframe, setIsIframe] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     setIsIframe(window !== window.parent);
   }, []);

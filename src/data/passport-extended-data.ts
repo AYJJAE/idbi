@@ -149,7 +149,6 @@ mockBusinesses.forEach((biz, index) => {
   const isAverage = index % 3 === 1;
 
   const baseScore = isExcellent ? 810 + (index % 5) * 10 : isAverage ? 690 + (index % 5) * 12 : 580 + (index % 5) * 15;
-  const growthRate = isExcellent ? 24 + (index % 5) : isAverage ? 12 + (index % 3) : 5 + (index % 4);
 
   const confidenceScore = 92 + (index % 8);
   const creditReadiness = Math.round(baseScore / 9.5 + (index % 4) * 2);

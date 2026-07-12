@@ -3,8 +3,7 @@
 import { PageHeader } from '@/components/page-header';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { MockConsentWorkflow } from '@/features/ecosystems/components/mock-consent-workflow';
-import { Network, Database, ShieldCheck, Banknote } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Database, ShieldCheck, Banknote } from 'lucide-react';
 
 export default function AccountAggregatorPage() {
   return (

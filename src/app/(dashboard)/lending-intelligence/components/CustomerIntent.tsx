@@ -3,8 +3,8 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { NexusScoreRing } from '@/components/nexus-score-ring';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
-import { Sparkles, MousePointerClick, Smartphone, Globe, Activity, ArrowUpRight } from 'lucide-react';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { Sparkles, MousePointerClick, Smartphone, Globe, ArrowUpRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 const intentTrendData = [
@@ -150,7 +150,7 @@ export function CustomerIntent() {
               </div>
               <div>
                 <h4 className="font-semibold text-foreground">Recommended RM Action</h4>
-                <p className="text-muted-foreground mt-1">Trigger personalized push notification for "Pre-approved Home Loan up to ₹75L at 8.4% p.a." Do not cold call immediately; wait for click-through.</p>
+                <p className="text-muted-foreground mt-1">Trigger personalized push notification for &quot;Pre-approved Home Loan up to ₹75L at 8.4% p.a.&quot; Do not cold call immediately; wait for click-through.</p>
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ import { PageHeader } from '@/components/page-header';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArchitectureDiagram } from '@/features/ecosystems/components/architecture-diagram';
 import { ConnectedEcosystemsCard } from '@/features/ecosystems/components/connected-ecosystems-card';
-import { Network, Activity, Clock, Server, ArrowUpRight } from 'lucide-react';
+import { Network, Activity, Clock, Server } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const kpis = [

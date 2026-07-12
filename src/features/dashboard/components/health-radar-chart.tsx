@@ -13,7 +13,6 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
   Tooltip as RechartsTooltip,
-  type TooltipContentProps,
 } from 'recharts';
 import { Card } from '@/components/ui/card';
 import { chartReveal } from '@/lib/animations';
@@ -36,6 +35,7 @@ function transformRadarData(dimensions: HealthDimension[]) {
 // Custom Tooltip
 // ---------------------------------------------------------------------------
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function RadarTooltip({ active, payload }: any) {
   if (!active || !payload?.length) return null;
   const item = payload[0];
@@ -86,7 +86,7 @@ export function HealthRadarChart({ dimensions }: HealthRadarChartProps) {
                 className="text-muted-foreground/50"
                 tickCount={5}
               />
-              <RechartsTooltip content={<RadarTooltip />} />
+              <RechartsTooltip content={RadarTooltip} />
               <Radar
                 name="Score"
                 dataKey="score"

@@ -2,7 +2,7 @@
 
 import { PageHeader } from '@/components/page-header';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { FileSpreadsheet, Download, RefreshCcw, CheckCircle2, History } from 'lucide-react';
+import { Download, RefreshCcw, CheckCircle2, History } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function GstPage() {

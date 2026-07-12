@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { useBusinessStore } from '@/store/business-store';
 import { creditData } from '@/data/credit-insights-data';
-import { Calculator, Play, RotateCcw } from 'lucide-react';
+import { Play } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 const COLORS = ['hsl(var(--primary))', 'hsl(var(--muted-foreground))'];
@@ -129,6 +129,7 @@ export default function ScenarioSimulatorPage() {
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
+                  {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                   <Tooltip formatter={(value: any) => formatCurrency(Math.round(value))} />
                 </PieChart>
               </ResponsiveContainer>

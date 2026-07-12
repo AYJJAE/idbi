@@ -2,7 +2,7 @@
 
 import { PageHeader } from '@/components/page-header';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Lock, FileText, CheckCircle2, XCircle, Clock } from 'lucide-react';
+import { Lock, CheckCircle2, XCircle, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
@@ -45,7 +45,7 @@ export default function ConsentManagerPage() {
                 </tr>
               </thead>
               <tbody>
-                {CONSENTS.map((consent, i) => (
+                {CONSENTS.map((consent) => (
                   <tr key={consent.id} className="border-b border-border/50 hover:bg-muted/20 transition-colors">
                     <td className="px-4 py-4 font-mono text-xs">{consent.id}</td>
                     <td className="px-4 py-4 font-medium">{consent.source}</td>

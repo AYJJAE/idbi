@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { NexusScoreRing } from '@/components/nexus-score-ring';
-import { AreaChart, Area, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer } from 'recharts';
 import { Sparkles, PiggyBank, TrendingUp, CreditCard, ShieldAlert, ArrowUpRight, ArrowDownRight, CheckCircle2, AlertCircle } from 'lucide-react';
 
 const savingsGrowthData = [
@@ -121,6 +121,7 @@ export function FinancialWellness() {
                   <XAxis dataKey="month" fontSize={12} tickLine={false} axisLine={false} />
                   <YAxis tickFormatter={formatCurrency} fontSize={12} tickLine={false} axisLine={false} />
                   <RechartsTooltip 
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     formatter={(value: any) => [`₹${Number(value).toLocaleString()}`, 'Total Savings']}
                     contentStyle={{ backgroundColor: 'hsl(var(--card))', borderRadius: '8px', border: '1px solid hsl(var(--border))' }}
                   />
@@ -155,6 +156,7 @@ export function FinancialWellness() {
                     ))}
                   </Pie>
                   <RechartsTooltip 
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     formatter={(value: any) => [`${value}%`, '']}
                     contentStyle={{ backgroundColor: 'hsl(var(--card))', borderRadius: '8px', border: '1px solid hsl(var(--border))' }}
                   />

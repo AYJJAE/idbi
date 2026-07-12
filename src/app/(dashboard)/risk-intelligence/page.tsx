@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { PageHeader } from '@/components/page-header';
 import { Card, CardContent } from '@/components/ui/card';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AlertTriangle, Activity, Users, ShieldAlert, TrendingDown } from 'lucide-react';
+import { AlertTriangle, Activity, Users, ShieldAlert } from 'lucide-react';
 
 import { EarlyWarningSystem } from './components/EarlyWarningSystem';
 import { LoanHealthScore } from './components/LoanHealthScore';

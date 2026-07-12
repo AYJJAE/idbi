@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useBusinessStore } from '@/store/business-store';
 import { extendedBusinessProfiles } from '@/data/business-data';
 import { formatCurrency } from '@/lib/utils';
-import { Mail, Phone, MapPin, Building, Globe, FileText, CheckCircle2, Download, Building2, Users, ShieldCheck, Clock, Activity, Briefcase } from 'lucide-react';
+import { MapPin, FileText, Download, Building2, ShieldCheck, Briefcase } from 'lucide-react';
 import { EmbeddedAIPanel } from '@/components/embedded-ai-panel';
 import { PROMPTS } from '@/services/ai/providers';
 
@@ -249,7 +249,7 @@ export default function BusinessProfilePage() {
 }
 
 // Needed for Lucide icon
-function CheckCircle(props: any) {
+function CheckCircle(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

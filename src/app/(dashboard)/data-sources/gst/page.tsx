@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useBusinessStore } from '@/store/business-store';
 import { gstData } from '@/data/datasource-data';
-import { Download, FileText, CheckCircle2, AlertTriangle, RefreshCcw } from 'lucide-react';
+import { Download, FileText, AlertTriangle, RefreshCcw } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 export default function GSTDataSourcePage() {
@@ -99,7 +99,7 @@ export default function GSTDataSourcePage() {
                   <XAxis dataKey="month" fontSize={12} tickLine={false} axisLine={false} />
                   <YAxis tickFormatter={formatCurrency} fontSize={12} tickLine={false} axisLine={false} />
                   <Tooltip 
-                    formatter={(value: any) => [formatCurrency(value), 'Amount']}
+                    formatter={(value) => [formatCurrency(value as number), 'Amount']}
                     contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', borderRadius: '8px' }}
                   />
                   <Legend iconType="circle" />

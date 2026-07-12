@@ -124,6 +124,7 @@ export function PortfolioHealth() {
                   <XAxis dataKey="month" fontSize={12} tickLine={false} axisLine={false} />
                   <YAxis tickFormatter={formatCurrencyLabel} fontSize={12} tickLine={false} axisLine={false} />
                   <RechartsTooltip 
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     formatter={(value: any) => [`₹${Number(value).toLocaleString()}`, 'Valuation']}
                     contentStyle={{ backgroundColor: 'hsl(var(--card))', borderRadius: '8px', border: '1px solid hsl(var(--border))' }}
                   />
@@ -158,6 +159,7 @@ export function PortfolioHealth() {
                     ))}
                   </Pie>
                   <RechartsTooltip 
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     formatter={(value: any) => [`${value}%`, '']}
                     contentStyle={{ backgroundColor: 'hsl(var(--card))', borderRadius: '8px', border: '1px solid hsl(var(--border))', zIndex: 50 }}
                   />

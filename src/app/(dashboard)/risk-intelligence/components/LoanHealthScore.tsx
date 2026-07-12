@@ -4,7 +4,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { NexusScoreRing } from '@/components/nexus-score-ring';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, Cell } from 'recharts';
-import { Sparkles, ShieldCheck, CreditCard, Activity, Briefcase, CalendarCheck } from 'lucide-react';
+import { Sparkles, CreditCard, Activity, Briefcase, CalendarCheck } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 const historicalPerformanceData = [

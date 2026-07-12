@@ -5,7 +5,7 @@
 // =============================================================================
 
 import * as React from 'react';
-import { motion } from 'framer-motion';
+
 import { Sidebar, MobileDock } from '@/components/sidebar';
 import { Header } from '@/components/header';
 import { CommandPalette } from '@/components/command-palette';
@@ -24,6 +24,7 @@ export default function DashboardLayout({
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -32,6 +33,7 @@ export default function DashboardLayout({
       <div className="flex h-screen w-screen items-center justify-center bg-background">
         <div className="flex flex-col items-center gap-4">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl overflow-hidden bg-black/50 border border-white/10 shadow-[0_0_20px_rgba(255,100,100,0.2)]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/nexus-logo.png" alt="N" className="w-full h-full object-cover" />
           </div>
           <div className="flex items-center gap-2 text-sm text-muted-foreground">

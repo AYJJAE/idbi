@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useBusinessStore } from '@/store/business-store';
-import { Download, FileText, UploadCloud, Folder, Search, MoreVertical, FileArchive, CheckCircle2, ShieldAlert } from 'lucide-react';
+import { FileText, UploadCloud, Folder, Search, MoreVertical, FileArchive, CheckCircle2, ShieldAlert } from 'lucide-react';
 
 export default function DocumentVaultPage() {
   const currentBusiness = useBusinessStore((state) => state.currentBusiness);

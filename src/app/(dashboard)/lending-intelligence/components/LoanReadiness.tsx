@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { NexusScoreRing } from '@/components/nexus-score-ring';
 import { Sparkles, ShieldCheck, AlertCircle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { Progress } from '@/components/ui/progress';
 
 const readinessMetrics = [
   { name: 'Credit Stability', score: 92, status: 'Excellent', color: 'bg-emerald-500' },
@@ -131,7 +130,7 @@ export function LoanReadiness() {
         <CardContent>
           <div className="space-y-3 text-sm leading-relaxed">
             <p>
-              This profile meets all criteria for "Straight-Through Processing" (STP) for retail unsecured lending up to ₹15L.
+              This profile meets all criteria for &quot;Straight-Through Processing&quot; (STP) for retail unsecured lending up to ₹15L.
             </p>
             <div className="grid grid-cols-2 gap-4 mt-2">
               <div>

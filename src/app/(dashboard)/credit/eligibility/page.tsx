@@ -2,12 +2,11 @@
 
 import * as React from 'react';
 import { PageHeader } from '@/components/page-header';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useBusinessStore } from '@/store/business-store';
 import { creditData } from '@/data/credit-insights-data';
-import { Download, Banknote, Percent, Calculator, Activity } from 'lucide-react';
+import { Download, Percent, Calculator, Activity } from 'lucide-react';
 
 export default function LoanEligibilityPage() {
   const currentBusiness = useBusinessStore((state) => state.currentBusiness);

@@ -5,6 +5,7 @@
 // interactive widgets, empty states, and mock document upload inputs).
 // =============================================================================
 
+/* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require('fs');
 const path = require('path');
 

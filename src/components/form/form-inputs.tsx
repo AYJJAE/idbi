@@ -11,7 +11,6 @@ import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { Button } from '@/components/ui/button';
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
 import { Check, ChevronsUpDown, UploadCloud, CheckCircle2 } from 'lucide-react';
 
@@ -327,11 +326,13 @@ export function FormDocumentUpload({
               'relative flex flex-col items-center justify-center rounded-xl border border-dashed p-4 md:p-6 text-center cursor-pointer',
               disabled && 'opacity-50 pointer-events-none'
             )}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onDragOver={(e: any) => {
               e.preventDefault();
               setDragActive(true);
             }}
             onDragLeave={() => setDragActive(false)}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onDrop={(e: any) => {
               e.preventDefault();
               setDragActive(false);

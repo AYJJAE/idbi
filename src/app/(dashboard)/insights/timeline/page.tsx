@@ -3,7 +3,6 @@
 import * as React from 'react';
 import { PageHeader } from '@/components/page-header';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { useBusinessStore } from '@/store/business-store';
 import { insightsData } from '@/data/credit-insights-data';
 import { Clock, Calendar, Briefcase, Award } from 'lucide-react';
@@ -29,6 +28,7 @@ export default function BusinessTimelinePage() {
         </CardHeader>
         <CardContent className="pt-6">
           <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {data.timeline.map((item: any, idx: number) => {
               const isLatest = idx === data.timeline.length - 1;
               return (

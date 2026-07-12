@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Building2, Landmark, Smartphone, ArrowRight, ShieldCheck, CheckCircle2, Loader2, Key, Network } from 'lucide-react';
+import { Landmark, Smartphone, ArrowRight, ShieldCheck, CheckCircle2, Loader2, Network } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 const steps = [

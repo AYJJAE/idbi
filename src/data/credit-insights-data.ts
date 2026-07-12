@@ -2,6 +2,7 @@
 // NEXUS — Extended Credit & Insights Mock Data
 // =============================================================================
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const creditData: Record<string, any> = {
   mfg_pinnacle: {
     readinessScore: 88,
@@ -40,6 +41,7 @@ export const creditData: Record<string, any> = {
   }
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const insightsData: Record<string, any> = {
   mfg_pinnacle: {
     riskRadar: [

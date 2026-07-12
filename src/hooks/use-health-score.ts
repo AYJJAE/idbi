@@ -22,18 +22,19 @@ interface UseHealthScoreReturn {
 export function useHealthScore(): UseHealthScoreReturn {
   const activeBusinessId = useBusinessStore((state) => state.activeBusinessId);
   const [healthScore, setHealthScore] = useState<HealthScore | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [loadedBusinessId, setLoadedBusinessId] = useState<string | null>(null);
   const [error] = useState<string | null>(null);
 
+  const isLoading = loadedBusinessId !== activeBusinessId;
+
   useEffect(() => {
-    setIsLoading(true);
     const timer = setTimeout(() => {
       setHealthScore(getHealthScoreForBusiness(activeBusinessId));
-      setIsLoading(false);
+      setLoadedBusinessId(activeBusinessId);
     }, 250);
 
     return () => clearTimeout(timer);
   }, [activeBusinessId]);
 
-  return { healthScore, isLoading, error };
+  return { healthScore: isLoading ? null : healthScore, isLoading, error };
 }

@@ -42,7 +42,7 @@ export function EmbeddedAIPanel({ title, prompt }: EmbeddedAIPanelProps) {
         content: prompt
       });
     }
-  }, [currentBusiness, prompt]);
+  }, [currentBusiness, prompt, append, messages.length]);
 
   const aiMessage = messages.findLast(m => m.role === 'assistant');
 

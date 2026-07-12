@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
-import { usePathname } from 'next/navigation';
+import React from 'react';
 import { Sidebar as AceternitySidebar, SidebarBody, SidebarLink } from '@/components/ui/sidebar';
 import {
   LayoutDashboard,
@@ -93,7 +92,6 @@ const ICON_MAP: Record<string, LucideIcon> = {
 };
 
 export function Sidebar() {
-  const pathname = usePathname();
   const { sidebarCollapsed, setSidebarCollapsed } = useDashboardStore();
   const open = !sidebarCollapsed;
   const setOpen = (value: React.SetStateAction<boolean>) => {
@@ -147,6 +145,7 @@ const Logo = () => {
   return (
     <div className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-foreground">
       <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-xl overflow-hidden bg-black/50 border border-white/10 shadow-[0_0_15px_rgba(255,100,100,0.15)]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/nexus-logo.png" alt="N" className="w-full h-full object-cover" />
       </div>
       <motion.span
@@ -164,6 +163,7 @@ const LogoIcon = () => {
   return (
     <div className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-foreground">
       <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-xl overflow-hidden bg-black/50 border border-white/10 shadow-[0_0_15px_rgba(255,100,100,0.15)]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/nexus-logo.png" alt="N" className="w-full h-full object-cover" />
       </div>
     </div>

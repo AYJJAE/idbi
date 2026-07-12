@@ -2,6 +2,7 @@
 // NEXUS — Extended Data Sources Integration Mock Data
 // =============================================================================
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const gstData: Record<string, any> = {
   mfg_pinnacle: {
     gstin: '27AAAAA1000A1Z1',
@@ -35,6 +36,7 @@ export const gstData: Record<string, any> = {
   }
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const upiData: Record<string, any> = {
   mfg_pinnacle: {
     vpa: 'pinnacle@okicici',
@@ -66,6 +68,7 @@ export const upiData: Record<string, any> = {
   }
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const aggregatorData: Record<string, any> = {
   mfg_pinnacle: {
     consentId: 'AA-CONSENT-9912',
@@ -92,6 +95,7 @@ export const aggregatorData: Record<string, any> = {
   }
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const epfoData: Record<string, any> = {
   mfg_pinnacle: {
     establishmentId: 'MH/BAN/12345',

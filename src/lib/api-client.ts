@@ -5,7 +5,7 @@
 import axios, { AxiosError, AxiosInstance, InternalAxiosRequestConfig } from 'axios';
 
 // Cache structure to prevent redundant financial data fetches
-const apiCache = new Map<string, { data: any; expiry: number }>();
+const apiCache = new Map<string, { data: unknown; expiry: number }>();
 const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes cache default
 
 export interface ApiErrorResponse {
@@ -69,7 +69,10 @@ apiClient.interceptors.response.use(
     if (!config) return Promise.reject(error);
 
     // Re-typing retry configurations safely
-    const customConfig = config as any;
+    interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
+      _retryCount?: number;
+    }
+    const customConfig = config as CustomAxiosRequestConfig;
     customConfig._retryCount = customConfig._retryCount || 0;
 
     // Retry policy: Up to 3 times on connection issues or 502/503/504 errors
@@ -94,7 +97,7 @@ apiClient.interceptors.response.use(
 );
 
 // Formatter to map HTTP status codes to enterprise business messages
-function formatApiError(error: AxiosError<ApiErrorResponse>): Error & { code?: string; details?: any } {
+function formatApiError(error: AxiosError<ApiErrorResponse>): Error & { code?: string; details?: unknown; originalError?: AxiosError<ApiErrorResponse> } {
   const status = error.response?.status;
   const data = error.response?.data;
 
@@ -127,7 +130,7 @@ function formatApiError(error: AxiosError<ApiErrorResponse>): Error & { code?: s
     }
   }
 
-  const enhancedError = new Error(message) as any;
+  const enhancedError = new Error(message) as Error & { code?: string; details?: unknown; originalError?: AxiosError<ApiErrorResponse> };
   enhancedError.code = code;
   enhancedError.details = details;
   enhancedError.originalError = error;

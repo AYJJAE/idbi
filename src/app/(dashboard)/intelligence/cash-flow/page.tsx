@@ -105,6 +105,7 @@ export default function CashFlowPage() {
                 <XAxis dataKey="month" fontSize={12} tickLine={false} axisLine={false} />
                 <YAxis tickFormatter={formatCurrencyLabel} fontSize={12} tickLine={false} axisLine={false} />
                 <Tooltip 
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   formatter={(value: any) => [`₹${(value / 100000).toFixed(2)} Lakhs`, 'Amount']}
                   contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', borderRadius: '8px' }}
                 />

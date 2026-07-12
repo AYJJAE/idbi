@@ -34,6 +34,7 @@ export interface WorkforceData {
   averageSalary: number;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const intelligenceData: Record<string, any> = {
   mfg_pinnacle: {
     revenue: {

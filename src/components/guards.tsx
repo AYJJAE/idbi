@@ -64,10 +64,11 @@ export function RoleGuard({
 // 3. Protected Route Wrapper (Client Side Guard)
 export function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const { isAuthenticated, session } = useAuthStore();
+  const { isAuthenticated } = useAuthStore();
   const [isMounted, setIsMounted] = React.useState(false);
 
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMounted(true);
     if (!isAuthenticated) {
       router.push('/login');

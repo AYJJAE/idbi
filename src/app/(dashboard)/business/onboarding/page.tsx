@@ -39,7 +39,7 @@ export default function OnboardingPage() {
           <Card>
             <CardHeader>
               <CardTitle>Integration Progress</CardTitle>
-              <CardDescription>Overall completion of {currentBusiness.name}'s data connections.</CardDescription>
+              <CardDescription>Overall completion of {currentBusiness.name}&apos;s data connections.</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col items-center justify-center py-6">
               <div className="relative flex h-32 w-32 items-center justify-center rounded-full border-8 border-muted">

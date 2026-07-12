@@ -13,7 +13,6 @@ import {
   CartesianGrid,
   Tooltip as RechartsTooltip,
   ResponsiveContainer,
-  type TooltipContentProps,
 } from 'recharts';
 import { Card } from '@/components/ui/card';
 import { formatCurrency } from '@/lib/utils';
@@ -25,12 +24,14 @@ import type { TrendDataPoint } from '@/types/financial';
 // Custom Tooltip
 // ---------------------------------------------------------------------------
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function CustomTooltip({ active, payload, label }: any) {
   if (!active || !payload?.length) return null;
 
   return (
     <div className="rounded-xl border border-border/60 bg-card px-3 py-2.5 shadow-xl shadow-black/5">
       <p className="mb-1.5 text-xs font-medium text-muted-foreground">{label}</p>
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       {payload.map((entry: any) => (
         <div
           key={entry.name}
@@ -105,7 +106,7 @@ export function RevenueTrendChart({ data }: RevenueTrendChartProps) {
                 axisLine={false}
                 tickFormatter={(val: number) => formatCurrency(val, { decimals: 0 })}
               />
-              <RechartsTooltip content={<CustomTooltip />} />
+              <RechartsTooltip content={CustomTooltip} />
               <Area
                 type="monotone"
                 dataKey="revenue"

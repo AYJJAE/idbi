@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useChat } from 'ai/react';
 import { Bot, X, Maximize2, Minimize2, Send, Loader2, Sparkles, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 import { useBusinessStore } from '@/store/business-store';
 import { intelligenceData as healthData } from '@/data/intelligence-data';
 import { creditData, insightsData } from '@/data/credit-insights-data';
@@ -85,18 +85,21 @@ export function AICopilot() {
               <div>
                 <h3 className="font-semibold mb-2">How can I assist you?</h3>
                 <p className="text-xs text-muted-foreground max-w-[250px]">
-                  I am analyzing {currentContext.currentBusiness.name}'s financial health, credit readiness, and risk profile.
+                  I am analyzing {currentContext.currentBusiness.name}&apos;s financial health, credit readiness, and risk profile.
                 </p>
               </div>
               <div className="flex flex-col gap-2 w-full mt-4">
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 <Button variant="outline" className="text-xs justify-start h-auto py-2 px-3 whitespace-normal text-left" onClick={() => handleInputChange({ target: { value: "Why is the Financial Health Score at its current level?" } } as any)}>
-                  "Why is the Financial Health Score at its current level?"
+                  &quot;Why is the Financial Health Score at its current level?&quot;
                 </Button>
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 <Button variant="outline" className="text-xs justify-start h-auto py-2 px-3 whitespace-normal text-left" onClick={() => handleInputChange({ target: { value: "What are the primary operational risks?" } } as any)}>
-                  "What are the primary operational risks?"
+                  &quot;What are the primary operational risks?&quot;
                 </Button>
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 <Button variant="outline" className="text-xs justify-start h-auto py-2 px-3 whitespace-normal text-left" onClick={() => handleInputChange({ target: { value: "Generate a Business Overview summary." } } as any)}>
-                  "Generate a Business Overview summary."
+                  &quot;Generate a Business Overview summary.&quot;
                 </Button>
               </div>
             </div>

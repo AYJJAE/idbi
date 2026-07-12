@@ -3,8 +3,8 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { NexusScoreRing } from '@/components/nexus-score-ring';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
-import { AlertTriangle, Clock, Activity, ArrowDownRight, ShieldAlert, Sparkles, TrendingDown } from 'lucide-react';
+import { XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
+import { AlertTriangle, Clock, Activity, ShieldAlert, Sparkles, TrendingDown } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 const riskTrendData = [

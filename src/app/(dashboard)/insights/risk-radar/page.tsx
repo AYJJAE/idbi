@@ -16,6 +16,7 @@ export default function RiskRadarPage() {
   const data = insightsData[currentBusiness.id] || insightsData['default'];
 
   // Higher value = higher risk (0-100)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const averageRisk = data.riskRadar.reduce((acc: number, val: any) => acc + val.A, 0) / data.riskRadar.length;
   const highestRiskNode = [...data.riskRadar].sort((a, b) => b.A - a.A)[0];
 

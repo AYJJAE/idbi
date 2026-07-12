@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useBusinessStore } from '@/store/business-store';
-import { Download, Users, TrendingUp, TrendingDown, Briefcase } from 'lucide-react';
+import { Download, Users, Briefcase } from 'lucide-react';
 import { intelligenceData } from '@/data/intelligence-data';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 

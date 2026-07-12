@@ -6,7 +6,6 @@
 
 import { motion } from 'framer-motion';
 import {
-  BarChart,
   Bar,
   XAxis,
   YAxis,
@@ -15,7 +14,6 @@ import {
   ResponsiveContainer,
   Line,
   ComposedChart,
-  type TooltipContentProps,
 } from 'recharts';
 import { Card } from '@/components/ui/card';
 import { formatCurrency } from '@/lib/utils';
@@ -27,12 +25,14 @@ import type { CashflowDataPoint } from '@/types/financial';
 // Custom Tooltip
 // ---------------------------------------------------------------------------
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function CashflowTooltip({ active, payload, label }: any) {
   if (!active || !payload?.length) return null;
 
   return (
     <div className="rounded-xl border border-border/60 bg-card px-3 py-2.5 shadow-xl shadow-black/5">
       <p className="mb-1.5 text-xs font-medium text-muted-foreground">{label}</p>
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       {payload.map((entry: any) => (
         <div
           key={entry.name}
@@ -112,7 +112,7 @@ export function CashflowChart({ data }: CashflowChartProps) {
                 axisLine={false}
                 tickFormatter={(val: number) => formatCurrency(val, { decimals: 0 })}
               />
-              <RechartsTooltip content={<CashflowTooltip />} />
+              <RechartsTooltip content={CashflowTooltip} />
               <Bar
                 dataKey="inflow"
                 fill={CHART_COLORS.success}

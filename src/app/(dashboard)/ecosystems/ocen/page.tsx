@@ -148,7 +148,7 @@ export default function OcenPage() {
                 ) : (
                   <div className="flex flex-col items-center justify-center py-12 text-muted-foreground border-2 border-dashed border-border/50 rounded-lg">
                     <Users className="h-10 w-10 mb-4 opacity-50" />
-                    <p>Click "Generate Mock Request" to simulate OCEN offers.</p>
+                    <p>Click &quot;Generate Mock Request&quot; to simulate OCEN offers.</p>
                   </div>
                 )}
               </AnimatePresence>

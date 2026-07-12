@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useBusinessStore } from '@/store/business-store';
 import { creditData } from '@/data/credit-insights-data';
-import { Download, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle } from 'lucide-react';
+import { Download, CheckCircle2, ShieldCheck, AlertTriangle } from 'lucide-react';
 import { RadialBarChart, RadialBar, ResponsiveContainer, PolarAngleAxis } from 'recharts';
 
 export default function CreditReadinessPage() {
@@ -65,6 +65,7 @@ export default function CreditReadinessPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
               {data.eligibilityFactors.map((factor: any, i: number) => (
                 <div key={i} className="flex items-start justify-between p-3 border rounded-lg hover:bg-muted/30">
                   <div className="flex gap-3">

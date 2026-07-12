@@ -24,6 +24,7 @@ Explain why this business has its current Financial Health Score. What are the k
 `
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getSystemPrompt = (data: any) => {
   return `
 You are an AI assistant. Use the provided context to answer the user's prompt.

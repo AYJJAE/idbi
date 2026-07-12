@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { PageHeader } from '@/components/page-header';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useBusinessStore } from '@/store/business-store';
@@ -37,7 +37,8 @@ export default function AIRecommendationsPage() {
       </Card>
 
       <div className="grid gap-4 md:gap-6 md:grid-cols-3">
-        {data.recommendedProducts.map((product: any, idx: number) => (
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+        {data.recommendedProducts.map((product: any) => (
           <Card key={product.id} className="flex flex-col relative overflow-hidden group hover:border-primary/50 transition-colors">
             {product.likelihood === 'High' && (
               <div className="absolute top-0 right-0 bg-emerald-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg z-10">

@@ -13,7 +13,7 @@ type EndpointKey = keyof typeof MOCK_API_RESPONSES;
 export function ApiExplorer() {
   const [selectedEndpoint, setSelectedEndpoint] = useState<EndpointKey>('/api/gst/profile');
   const [loading, setLoading] = useState(false);
-  const [response, setResponse] = useState<any>(null);
+  const [response, setResponse] = useState<unknown>(null);
   const [latency, setLatency] = useState<number | null>(null);
 
   const endpoints = Object.keys(MOCK_API_RESPONSES) as EndpointKey[];
@@ -129,7 +129,7 @@ export function ApiExplorer() {
                 animate={{ opacity: 1 }}
                 className="absolute inset-0 flex items-center justify-center text-gray-600"
               >
-                Click "Execute Request" to simulate API call
+                Click &quot;Execute Request&quot; to simulate API call
               </motion.div>
             )}
           </AnimatePresence>

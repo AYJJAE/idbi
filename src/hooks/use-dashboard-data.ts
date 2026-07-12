@@ -45,11 +45,10 @@ interface UseDashboardDataReturn {
 export function useDashboardData(): UseDashboardDataReturn {
   const activeBusinessId = useBusinessStore((state) => state.activeBusinessId);
   const [data, setData] = useState<DashboardData | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const isLoading = !data || data.business.id !== activeBusinessId;
   const [error] = useState<string | null>(null);
 
   useEffect(() => {
-    setIsLoading(true);
     // Dynamic generation triggered instantly or after brief animation buffer
     const timer = setTimeout(() => {
       setData({
@@ -60,11 +59,10 @@ export function useDashboardData(): UseDashboardDataReturn {
         cashflowData: getCashflowDataForBusiness(activeBusinessId),
         activityEvents: getTimelineEventsForBusiness(activeBusinessId),
       });
-      setIsLoading(false);
     }, 250);
 
     return () => clearTimeout(timer);
   }, [activeBusinessId]);
 
-  return { data, isLoading, error };
+  return { data: isLoading ? null : data, isLoading, error };
 }

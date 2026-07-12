@@ -86,6 +86,7 @@ export default function ComplianceMonitorPage() {
               <div className="text-right">Delay / Penalty Risk</div>
             </div>
             <div className="divide-y">
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
               {data.gstFilings.map((filing: any, i: number) => (
                 <div key={i} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center p-3 text-sm">
                   <div className="font-medium">{filing.period}</div>

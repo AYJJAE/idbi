@@ -14,7 +14,6 @@ import {
   CartesianGrid,
   Tooltip as RechartsTooltip,
   ResponsiveContainer,
-  type TooltipContentProps,
 } from 'recharts';
 import { Card } from '@/components/ui/card';
 import { chartReveal } from '@/lib/animations';
@@ -25,12 +24,14 @@ import type { ScoreHistoryPoint, HealthDimensionId } from '@/types/financial';
 // Custom Tooltip
 // ---------------------------------------------------------------------------
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function ScoreTooltip({ active, payload, label }: any) {
   if (!active || !payload?.length) return null;
 
   return (
     <div className="rounded-lg border border-border bg-card px-3 py-2 shadow-lg">
       <p className="mb-1.5 text-xs font-medium text-muted-foreground">{label}</p>
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       {payload.map((entry: any) => (
         <div
           key={entry.name}
@@ -141,7 +142,7 @@ export function ScoreHistoryChart({ data }: ScoreHistoryChartProps) {
                 tickLine={false}
                 axisLine={false}
               />
-              <RechartsTooltip content={<ScoreTooltip />} />
+              <RechartsTooltip content={ScoreTooltip} />
 
               {DIMENSION_OPTIONS.map((opt) =>
                 activeDimensions.has(opt.id) ? (

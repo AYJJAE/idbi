@@ -89,6 +89,7 @@ export default function RevenueAnalysisPage() {
                   <XAxis dataKey="month" fontSize={12} tickLine={false} axisLine={false} />
                   <YAxis tickFormatter={formatCurrencyLabel} fontSize={12} tickLine={false} axisLine={false} />
                   <Tooltip 
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     formatter={(value: any) => [`₹${(value / 100000).toFixed(2)} Lakhs`, 'Revenue']}
                     contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', borderRadius: '8px' }}
                   />
@@ -120,11 +121,13 @@ export default function RevenueAnalysisPage() {
                     paddingAngle={5}
                     dataKey="value"
                   >
+                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                     {data.revenueByProduct.map((entry: any, index: number) => (
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
                   <Tooltip 
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     formatter={(value: any) => [`${value}%`, 'Share']}
                     contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', borderRadius: '8px' }}
                   />

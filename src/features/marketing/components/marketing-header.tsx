@@ -1,9 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { tokens } from '@/design/tokens';
 import { Monitor, Tablet, Smartphone } from 'lucide-react';
 import { useDashboardStore } from '@/store/dashboard-store';
 import { cn } from '@/lib/utils';
@@ -19,6 +17,7 @@ export function MarketingHeader() {
         <div className="flex items-center gap-3">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-105 overflow-hidden bg-black/50 border border-white/10 shadow-[0_0_20px_rgba(255,100,100,0.2)]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/nexus-logo.png" alt="Nexus" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col">

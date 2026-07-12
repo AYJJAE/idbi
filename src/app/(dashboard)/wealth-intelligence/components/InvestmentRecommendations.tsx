@@ -125,7 +125,7 @@ export function InvestmentRecommendations() {
         <CardContent>
           <div className="space-y-3 text-sm leading-relaxed">
             <p>
-              Executing the <strong>Top AI Match</strong> (NEXUS Alpha Bluechip Fund) via a ₹15,000 monthly SIP will successfully rebalance your portfolio's Large-Cap allocation from 42% to the target 55% over the next 14 months.
+              Executing the <strong>Top AI Match</strong> (NEXUS Alpha Bluechip Fund) via a ₹15,000 monthly SIP will successfully rebalance your portfolio&apos;s Large-Cap allocation from 42% to the target 55% over the next 14 months.
             </p>
             <p className="text-muted-foreground">
               This action alone is projected to reduce your overall portfolio volatility by 1.2% while maintaining your target XIRR of 12.5%.

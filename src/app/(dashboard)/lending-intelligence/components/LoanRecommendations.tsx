@@ -1,9 +1,7 @@
 'use client';
 
-import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
-import { Sparkles, Home, Car, Wallet, Briefcase, GraduationCap, Building2, CheckCircle2 } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
+import { Sparkles, Home, Car, Wallet } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const recommendations = [
@@ -122,7 +120,7 @@ export function LoanRecommendations() {
               The primary recommendation is a <strong>Home Loan</strong> due to the high probability of conversion driven by behavioral intent signals (property site visits, EMI calculator usage). 
             </p>
             <p>
-              <strong>Next Best Action:</strong> Once the Home Loan is sanctioned, automatically pitch a bundled <em>Home Insurance</em> and a <em>Credit Card</em> with a waiver on the first-year fee. The customer's strong repayment capacity supports an additional ₹1.5L unsecured limit.
+              <strong>Next Best Action:</strong> Once the Home Loan is sanctioned, automatically pitch a bundled <em>Home Insurance</em> and a <em>Credit Card</em> with a waiver on the first-year fee. The customer&apos;s strong repayment capacity supports an additional ₹1.5L unsecured limit.
             </p>
           </div>
         </CardContent>

@@ -13,7 +13,7 @@ export default function EPFODataSourcePage() {
   const currentBusiness = useBusinessStore((state) => state.currentBusiness);
   const data = epfoData[currentBusiness.id] || epfoData['default'];
 
-  const formatCurrency = (val: number) => `₹${(val / 100000).toFixed(2)}L`;
+
 
   return (
     <div className="space-y-6">
@@ -93,6 +93,7 @@ export default function EPFODataSourcePage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
               {data.recentChallans.map((challan: any, i: number) => (
                 <div key={i} className="flex items-center justify-between p-3 border rounded-lg hover:bg-muted/50 transition-colors">
                   <div className="flex items-center gap-4">

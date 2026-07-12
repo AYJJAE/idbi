@@ -1,11 +1,11 @@
 import { streamText, Message } from 'ai';
 import { getModel, isAIEnabled } from '@/services/ai/client';
-import { AI_CONFIG } from '@/services/ai/config';
 import { getSystemPrompt } from '@/services/ai/providers';
 
 export const maxDuration = 30;
 
 export async function POST(req: Request) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { messages, data }: { messages: Message[], data: any } = await req.json();
 
   if (!isAIEnabled()) {

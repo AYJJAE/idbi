@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, Cell } from 'recharts';
-import { Sparkles, ArrowRight, ArrowDownRight, ArrowUpRight, BrainCircuit, CheckCircle2, AlertCircle } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, BrainCircuit, CheckCircle2, AlertCircle } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 const featureImportanceData = [
@@ -47,6 +47,7 @@ export function AIExplainability() {
                   <RechartsTooltip 
                     cursor={{ fill: 'hsl(var(--muted)/0.5)' }}
                     contentStyle={{ backgroundColor: 'hsl(var(--card))', borderRadius: '8px', border: '1px solid hsl(var(--border))' }}
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     formatter={(value: any, name: any, props: any) => [
                       `${Math.abs(value)}% Impact`, 
                       props.payload.type === 'negative' ? 'Increases Risk' : 'Reduces Risk'
@@ -78,7 +79,7 @@ export function AIExplainability() {
                 This high risk score is heavily influenced by a severe drop in <strong>Cash Flow Analysis</strong> metrics, specifically a 42% variance observed over the last quarter. This liquidity crunch directly triggered the <strong>Behaviour Analysis</strong> module to flag two consecutive delayed payments (weighted at 85% importance).
               </p>
               <p>
-                However, the model confidence is stabilized by the <strong>Financial Stability</strong> node, which notes that the borrower's <strong>Income Analysis</strong> remains technically stable, and they possess a high-value secured collateral, acting as strong positive buffers.
+                However, the model confidence is stabilized by the <strong>Financial Stability</strong> node, which notes that the borrower&apos;s <strong>Income Analysis</strong> remains technically stable, and they possess a high-value secured collateral, acting as strong positive buffers.
               </p>
             </div>
           </CardContent>

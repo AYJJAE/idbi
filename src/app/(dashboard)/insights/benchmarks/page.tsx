@@ -48,6 +48,7 @@ export default function IndustryBenchmarksPage() {
       </Card>
 
       <div className="grid gap-4 md:gap-6 md:grid-cols-2">
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         {data.benchmarks.map((bm: any, idx: number) => {
           // Assume for margin/turnover higher is better, for debtor days/debt lower is better
           const isHigherBetter = bm.metric.includes('Margin') || bm.metric.includes('Turnover');

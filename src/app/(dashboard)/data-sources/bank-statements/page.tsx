@@ -16,7 +16,7 @@ export default function BankStatementsPage() {
   const data = aggregatorData[currentBusiness.id] || aggregatorData['default'];
 
   // Mock deterministic transaction data for the statement viewer
-  const seed = currentBusiness.id.length;
+  // Mock deterministic transaction data for the statement viewer
   const recentTransactions = [
     { id: 'tx-1', date: '2025-01-22', description: 'NEFT-TATA STEEL LTD', type: 'debit', amount: 150000, balance: 450000 },
     { id: 'tx-2', date: '2025-01-21', description: 'IMPS-LOCAL VENDOR', type: 'debit', amount: 25000, balance: 600000 },
@@ -63,6 +63,7 @@ export default function BankStatementsPage() {
           <CardContent>
             <div className="text-3xl font-bold mb-2">{data.accountsLinked.length}</div>
             <div className="flex flex-wrap gap-1">
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
               {data.accountsLinked.map((acc: any, i: number) => (
                 <Badge key={i} variant="secondary" className="text-[10px] font-mono">{acc.bank} {acc.mask}</Badge>
               ))}
@@ -152,7 +153,7 @@ export default function BankStatementsPage() {
                   <XAxis dataKey="day" fontSize={10} tickLine={false} axisLine={false} />
                   <YAxis fontSize={10} tickLine={false} axisLine={false} />
                   <Tooltip 
-                    formatter={(value: any) => [`₹${value}k`, 'Balance']}
+                    formatter={(value) => [`₹${value as number}k`, 'Balance']}
                     contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', borderRadius: '8px', fontSize: '12px' }}
                   />
                   <Bar dataKey="balance" fill="hsl(var(--primary))" radius={[2, 2, 0, 0]} opacity={0.8} />

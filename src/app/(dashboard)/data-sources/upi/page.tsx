@@ -7,14 +7,14 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useBusinessStore } from '@/store/business-store';
 import { upiData } from '@/data/datasource-data';
-import { Download, Smartphone, QrCode, TrendingUp, AlertCircle, ShieldCheck } from 'lucide-react';
+import { Download, QrCode, TrendingUp, AlertCircle, ShieldCheck } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default function UPIDataSourcePage() {
   const currentBusiness = useBusinessStore((state) => state.currentBusiness);
   const data = upiData[currentBusiness.id] || upiData['default'];
 
-  const formatCurrency = (val: number) => `₹${(val / 1000).toFixed(1)}k`;
+
 
   return (
     <div className="space-y-6">

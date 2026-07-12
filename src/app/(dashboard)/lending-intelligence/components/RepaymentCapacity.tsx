@@ -2,9 +2,8 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, ReferenceLine, Cell } from 'recharts';
-import { Sparkles, IndianRupee, TrendingUp, TrendingDown, Wallet, CreditCard, Scale } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer } from 'recharts';
+import { Sparkles, IndianRupee, Wallet, CreditCard, Scale } from 'lucide-react';
 
 const cashFlowData = [
   { month: 'Jan', inflow: 145000, outflow: 85000, emi: 25000 },
@@ -79,6 +78,7 @@ export function RepaymentCapacity() {
                   <XAxis dataKey="month" fontSize={12} tickLine={false} axisLine={false} />
                   <YAxis tickFormatter={formatCurrency} fontSize={12} tickLine={false} axisLine={false} />
                   <RechartsTooltip 
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     formatter={(value: any) => [`₹${Number(value).toLocaleString()}`, '']}
                     contentStyle={{ backgroundColor: 'hsl(var(--card))', borderRadius: '8px', border: '1px solid hsl(var(--border))' }}
                   />

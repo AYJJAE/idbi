@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-import { Sparkles, Home, Car, GraduationCap, Plane, Briefcase, Plus, TrendingUp, Calendar } from 'lucide-react';
+import { Sparkles, Home, GraduationCap, Plane, Briefcase, Plus, TrendingUp, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
