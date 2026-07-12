@@ -1,45 +1,171 @@
-NEXUS – AI-Powered MSME Financial Intelligence Platform
+NEXUS Financial Intelligence Engine
 
-NEXUS is an enterprise-grade financial health intelligence platform designed for MSMEs.
+NEXUS is an enterprise-grade Financial Intelligence Platform developed as a hackathon prototype to reimagine how banks assess, monitor, and support businesses using AI and alternate financial data.
 
-## Setup and Installation
+Traditional credit assessment methods rely heavily on financial statements, collateral, and historical credit records, leaving many New-to-Credit (NTC) and New-to-Bank (NTB) businesses underserved. NEXUS addresses this challenge by consolidating multiple financial ecosystems into a unified intelligence platform capable of delivering explainable, data-driven financial insights.
 
-1. Clone the repository
-2. Install dependencies: \`npm install\`
-3. Run the development server: \`npm run dev\`
-4. Open [http://localhost:3000](http://localhost:3000)
+The platform demonstrates how alternate data sources—including GST, UPI, Account Aggregator (AA), EPFO, Unified Lending Interface (ULI), and Open Credit Enablement Network (OCEN)—can be combined to generate a multidimensional Financial Health Card, enabling faster, fairer, and more informed lending decisions.
 
-## AI Configuration
+Beyond MSME financial assessment, NEXUS showcases how the same intelligence platform can be extended to retail lending, AI-powered wealth advisory, and portfolio risk management, presenting a unified vision for the future of digital banking.
 
-The application features advanced AI integration powered by Google Gemini. For security and open-source compliance, the live AI integration is disabled by default until you configure it.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-### Enabling AI Insights
-To reconnect the AI functionality:
+Hackathon Problem Statement
 
-1. Obtain a **Gemini API Key** from [Google AI Studio](https://aistudio.google.com/).
-2. Create a \`.env.local\` file in the root directory (you can copy the provided \`.env.example\` file):
-   \`\`\`bash
-   cp .env.example .env.local
-   \`\`\`
-3. Add your key to the environment variables:
-   \`\`\`env
-   GEMINI_API_KEY=your_actual_api_key_here
-   \`\`\`
-4. Restart the development server.
+This project primarily addresses the challenge of designing an AI/ML-driven MSME Financial Health Card capable of:
 
-### AI Architecture
-The AI integration is modularized inside \`src/services/ai/\`:
-- **\`config.ts\`**: Configuration flags (e.g., \`NEXT_PUBLIC_DISABLE_AI\`) and model selection.
-- **\`client.ts\`**: The Gemini client initialization.
-- **\`providers.ts\`**: Reusable placeholder prompt templates. You can customize these prompts to tailor the AI responses to your specific data models.
+• Aggregating alternate financial data sources
+• Computing a multidimensional Financial Health Score
+• Visualizing financial strengths and risks
+• Supporting near real-time credit assessment
+• Integrating with digital public infrastructure such as ULI, OCEN, and Account Aggregator
+• Improving onboarding of credit-invisible MSMEs
+• Enabling better portfolio quality through data-driven insights
 
-## Deployment
+NEXUS also demonstrates how this architecture can naturally scale to additional banking use cases such as intelligent retail lending, AI wealth advisory, and predictive portfolio analytics.
 
-### Vercel Deployment
-NEXUS is optimized for Vercel. 
-1. Push your code to GitHub.
-2. Import the repository in your Vercel dashboard.
-3. In the Vercel project settings, add the \`GEMINI_API_KEY\` environment variable.
-4. Deploy.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-If you wish to deploy the application publicly *without* enabling the live AI for visitors, you can set the environment variable \`NEXT_PUBLIC_DISABLE_AI=true\`. This will gracefully fall back to a mock message across all AI panels.
+Core Features
+
+Core Financial Intelligence
+
+• Financial Health Card
+• Financial Passport
+• GST Network
+• UPI Network
+• Account Aggregator (AA)
+• EPFO
+• Unified Lending Interface (ULI)
+• Open Credit Enablement Network (OCEN)
+• Credit Readiness Assessment
+• Financial Risk Analysis
+• Cash Flow Intelligence
+• Industry Benchmarking
+• Financial Timeline
+• Executive Dashboard
+
+Lending Intelligence
+
+• Customer Intent Score
+• Repayment Capacity Analyzer
+• Loan Readiness Score
+• Smart Loan Recommendation Engine
+• High-Conversion Lead Dashboard
+
+Wealth Intelligence
+
+• AI Wealth Avatar
+• Financial Wellness Score
+• Goal-Based Financial Planner
+• Portfolio Health Dashboard
+• Personalized Investment Recommendations
+
+Risk Intelligence
+
+• Early Warning System
+• Loan Health Score
+• AI Explainability Dashboard
+• Portfolio Risk Heatmap
+• Scenario Simulator
+
+Enterprise Capabilities
+
+• Interactive Executive Dashboards
+• AI-Powered Insights
+• Financial Reports
+• Consent Management
+• Integration Health Monitoring
+• API Playground
+• Future Integration Architecture
+• Responsive Desktop, Tablet & Mobile Experience
+• Production-Ready Demonstration Environment
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Technology Stack
+
+Frontend
+
+• Next.js
+• React
+• TypeScript
+• Tailwind CSS
+• Framer Motion
+• shadcn/ui
+• Lucide Icons
+
+Architecture
+
+• Modular Service Architecture
+• REST APIs
+• AI Service Layer
+• Scalable Integration Layer
+
+Financial Data Sources
+
+• GST
+• UPI
+• Account Aggregator (AA)
+• EPFO
+• Unified Lending Interface (ULI)
+• Open Credit Enablement Network (OCEN)
+
+Future Integrations
+
+• Income Tax (ITR)
+• GeM
+• FASTag Commercial Data
+• Utility Bill Providers
+• ONDC
+• Credit Bureaus
+• MCA
+• CKYC
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Project Highlights
+
+• Enterprise-grade banking platform
+• Unified Financial Intelligence ecosystem
+• Explainable AI-driven financial insights
+• Realistic enterprise demo datasets
+• Interactive dashboards and analytics
+• Modular architecture for future banking integrations
+• Fully responsive across Desktop, Tablet and Mobile
+• Premium Light and Dark themes
+• Designed for future backend and API integrations
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Demo Environment
+
+This repository is configured as a fully interactive demonstration environment.
+
+Authentication has been disabled in Demo Mode, allowing judges and reviewers to explore every feature without additional configuration.
+
+The platform includes realistic demo businesses, financial records, analytics, dashboards, reports and visualizations to demonstrate the complete capabilities of NEXUS.
+
+No real banking or customer data is included.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Repository Notice
+
+Sensitive credentials, API keys and internal AI prompts have been removed from this repository for security and open-source compliance.
+
+External integrations can be configured using environment variables where required.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Disclaimer
+
+NEXUS is a hackathon demonstration platform created to showcase concepts in financial intelligence, alternate-data credit assessment and enterprise banking analytics.
+
+All financial information, businesses and datasets within the application are simulated for demonstration purposes only and do not represent real customers or production banking systems.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Vision
+
+To build a unified Financial Intelligence Platform that empowers financial institutions to make faster, smarter and more inclusive decisions by transforming fragmented financial data into actionable intelligence through modern data ecosystems, AI and enterprise-grade digital experiences.
