@@ -42,7 +42,7 @@ apiClient.interceptors.request.use(
             config.headers.set('Authorization', `Bearer ${token}`);
           }
         } catch (e) {
-          console.error('Failed to parse active authentication tokens:', e);
+          // Silent error handling for token parsing
         }
       }
     }
@@ -85,7 +85,6 @@ apiClient.interceptors.response.use(
     if (shouldRetry && customConfig._retryCount < MAX_RETRIES) {
       customConfig._retryCount += 1;
       const delay = Math.pow(2, customConfig._retryCount) * 1000; // Exponential backoff: 2s, 4s, 8s
-      console.warn(`API call failed. Retrying instance in ${delay}ms (${customConfig._retryCount}/${MAX_RETRIES})...`);
       await new Promise((resolve) => setTimeout(resolve, delay));
       return apiClient(config);
     }

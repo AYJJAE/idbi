@@ -49,7 +49,6 @@ export default function LoginPage() {
   const onSubmit = async (data: LoginFormData) => {
     setIsSubmitting(true);
     // Mock auth — simulate API call
-    console.log('Login attempt:', data.email);
     await new Promise((resolve) => setTimeout(resolve, 1200));
     setIsSubmitting(false);
     router.push('/');
@@ -103,12 +102,6 @@ export default function LoginPage() {
                 <label htmlFor="password" className="text-sm font-medium text-foreground">
                   Password
                 </label>
-                <a
-                  href="#"
-                  className="text-xs font-medium text-primary hover:underline"
-                >
-                  Forgot password?
-                </a>
               </div>
               <div className="relative">
                 <Input

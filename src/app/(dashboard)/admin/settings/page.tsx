@@ -86,7 +86,7 @@ export default function SettingsPage() {
                 <div className="space-y-2 pt-4 border-t">
                   <Label>Primary Webhook Secret</Label>
                   <div className="flex gap-2">
-                    <Input type="password" defaultValue="nexus-sec-1234567890" />
+                    <Input type="password" defaultValue="" />
                     <Button variant="outline">Rotate Key</Button>
                   </div>
                 </div>

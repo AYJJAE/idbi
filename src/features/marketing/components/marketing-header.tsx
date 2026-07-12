@@ -2,12 +2,8 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Monitor, Tablet, Smartphone } from 'lucide-react';
-import { useDashboardStore } from '@/store/dashboard-store';
-import { cn } from '@/lib/utils';
-
+import { ThemeToggle } from '@/components/theme-toggle';
 export function MarketingHeader() {
-  const { simulatorMode, setSimulatorMode } = useDashboardStore();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-2xl">
@@ -27,54 +23,11 @@ export function MarketingHeader() {
           </Link>
         </div>
 
-        {/* Navigation Links */}
-        <nav className="hidden md:flex items-center gap-4 md:gap-6 lg:gap-8">
-          {['Features', 'Architecture', 'Hackathon Perspective'].map((item) => (
-            <Link
-              key={item}
-              href={`#${item.toLowerCase().replace(/ /g, '-')}`}
-              className="text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
-            >
-              {item}
-            </Link>
-          ))}
-        </nav>
+
 
         {/* Right side Actions */}
         <div className="flex items-center gap-4">
-          {/* Device Simulator Toggle */}
-          <div className="hidden lg:flex items-center gap-1 bg-card/60 backdrop-blur-md border border-border/50 rounded-lg p-1 h-9 shadow-sm">
-            <button
-              onClick={() => setSimulatorMode('desktop')}
-              className={cn(
-                "p-1.5 rounded-md transition-colors",
-                simulatorMode === 'desktop' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-              )}
-              title="Desktop View"
-            >
-              <Monitor className="h-4 w-4" />
-            </button>
-            <button
-              onClick={() => setSimulatorMode('tablet')}
-              className={cn(
-                "p-1.5 rounded-md transition-colors",
-                simulatorMode === 'tablet' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-              )}
-              title="Tablet View"
-            >
-              <Tablet className="h-4 w-4" />
-            </button>
-            <button
-              onClick={() => setSimulatorMode('phone')}
-              className={cn(
-                "p-1.5 rounded-md transition-colors",
-                simulatorMode === 'phone' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-              )}
-              title="Phone View"
-            >
-              <Smartphone className="h-4 w-4" />
-            </button>
-          </div>
+          <ThemeToggle />
           
           <Link href="/business/onboarding" className="hidden sm:block">
             <Button className="bg-[#008C5A] hover:bg-[#2DBE7F] text-white transition-all shadow-[0_0_20px_rgba(0,140,90,0.3)] hover:shadow-[0_0_25px_rgba(45,190,127,0.5)]">

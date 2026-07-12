@@ -58,7 +58,6 @@ export default function SignupPage() {
 
   const onSubmit = async (data: SignupFormData) => {
     setIsSubmitting(true);
-    console.log('Signup attempt:', data.email, data.businessName);
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsSubmitting(false);
     router.push('/');
@@ -176,18 +175,7 @@ export default function SignupPage() {
               )}
             </div>
 
-            {/* Terms */}
-            <p className="text-[11px] text-muted-foreground">
-              By creating an account, you agree to our{' '}
-              <a href="#" className="font-medium text-primary hover:underline">
-                Terms of Service
-              </a>{' '}
-              and{' '}
-              <a href="#" className="font-medium text-primary hover:underline">
-                Privacy Policy
-              </a>
-              .
-            </p>
+
 
             {/* Submit */}
             <Button
